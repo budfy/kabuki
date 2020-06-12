@@ -80,7 +80,7 @@ gulp.task("scss", function () {
 			}),
 		)
 		.pipe(webpcss())
-		.pipe(sourcemaps.write()) //записываем карту в итоговый файл
+		.pipe(sourcemaps.write("sourcemaps/")) //записываем карту в итоговый файл
 		.pipe(gulp.dest("build/css")) //кладём итоговый файл в директорию build/css
 		.pipe(
 			browserSync.reload({
@@ -99,8 +99,10 @@ gulp.task("style", function () {
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
 		])
+		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
 		.pipe(cssmin()) //минифицируем полученный файл
+		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/css")) //кидаем готовый файл в директорию
 		.pipe(size());
 });
@@ -112,10 +114,12 @@ gulp.task("script", function () {
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			"node_modules/jquery/dist/jquery.js"
 		])
+		.pipe(sourcemaps.init())
 		.pipe(size())
 		.pipe(babel())
 		.pipe(concat("libs.min.js"))
 		.pipe(uglify())
+		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/js"))
 		.pipe(size());
 });
@@ -149,6 +153,7 @@ gulp.task("html", function () {
 	//собираем html из кусочков
 	return gulp
 		.src(["src/**/*.html", "!src/components/**/*.html"])
+		.pipe(sourcemaps.init())
 		.pipe(
 			include({
 				//импортируем файлы с префиксом @@. ПРефикс можно настроить под себя.
@@ -157,6 +162,7 @@ gulp.task("html", function () {
 			}),
 		)
 		.pipe(webphtml())
+		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/"))
 		.pipe(size())
 		.pipe(

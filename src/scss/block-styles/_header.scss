@@ -1,0 +1,182 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  &__inner {
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    height: 5.875rem;
+    width: 8.3125rem;
+    margin-right: 3.3125rem;
+  }
+
+  &__logo-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__work-hours {
+    height: 100%;
+    padding: 1.4375rem 0;
+    margin-right: 4.375rem;
+  }
+
+  &__working-time {
+    margin-left: 0.25rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  &__working-day-item {
+    height: 1.5rem;
+    width: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    &.--current {
+      color: white;
+      background-color: var(--main-red);
+    }
+  }
+
+  &__working-day-text {
+    font-size: 0.75rem;
+  }
+
+  &__nav {
+    margin-right: 2.5rem;
+    margin-left: -1.875rem;
+  }
+
+  &__nav-list {
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__nav-item {
+    margin: 0 1.875rem;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+
+    &.--current .header__nav-link {
+      color: var(--main-red);
+      transition: all .3s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0.3125rem;
+        border-top: 1px solid var(--main-red);
+        border-bottom: 1px solid var(--main-red);
+        transition: all .3s;
+      }
+    }
+  }
+
+  &__nav-list:hover .header__nav-item.--current .header__nav-link {
+    color: black;
+
+    &:hover {
+      color: var(--main-red);
+    }
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &__phones-list {
+    align-items: center;
+
+    .phones__item {
+      display: inline-block;
+      margin: 0;
+
+      &:last-child {
+        margin-left: 1.875rem;
+      }
+    }
+  }
+
+  &__icons {
+    margin-left: auto;
+  }
+
+  &__icon {
+    height: 2rem;
+    display: inline-block;
+  }
+
+  &__icon-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__icon-pic,
+  &__icon-pic path {
+    transition: all .3s;
+  }
+
+  &__icon-cart {
+    position: relative;
+    border: none;
+    margin-left: 3rem;
+    background-color: transparent;
+
+    & .header__icon-pic path:nth-child(n+6) {
+      fill: transparent
+    }
+
+    &.--full {
+      & .header__icon-pic path:nth-child(n+6) {
+        fill: black;
+      }
+    }
+  }
+
+  &__icon-counter {
+    position: absolute;
+    width: 0.875rem;
+    height: 0.875rem;
+    top: 0;
+    right: 0;
+    background-color: var(--main-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 8px;
+  }
+
+  &__icon:focus {
+    outline: transparent;
+
+    & .header__icon-pic,
+    &.header__icon-cart.--full .header__icon-pic path:nth-child(n+6) {
+
+      fill: var(--dark-grey);
+    }
+  }
+
+  &__icon:hover {
+    outline: transparent;
+
+    & .header__icon-pic,
+    &.header__icon-cart.--full .header__icon-pic path:nth-child(n+6) {
+      fill: var(--main-red);
+    }
+  }
+}

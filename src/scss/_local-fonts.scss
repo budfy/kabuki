@@ -1,0 +1,71 @@
+@font-face {
+  font-family: Segoe;
+  src: local('SegoeLight'),
+    local('Segoe-light'),
+    url('../fonts/SegoeUI-Light.woff2') format('woff2'),
+    url('../fonts/SegoeUI-Light.woff') format('woff'),
+    url('../fonts/SegoeUI-Light.eot') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Segoe;
+  src: local('Segoe'),
+    local('SegoeNormal'),
+    url('../fonts/Segoe.woff2') format('woff2'),
+    url('../fonts/Segoe.woff') format('woff'),
+    url('../fonts/Segoe.eot') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Segoe;
+  src: local('SegoeItalic'),
+    local('Segoe-italic'),
+    url('../fonts/SegoeUI-Italic.woff2') format('woff2'),
+    url('../fonts/SegoeUI-Italic.woff') format('woff'),
+    url('../fonts/SegoeUI-Italic.eot') format('embedded-opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Segoe;
+  src: local('SegoeSemibold'),
+    local('Segoe-semibold'),
+    url('../fonts/SegoeUI-SemiBold.woff2') format('woff2'),
+    url('../fonts/SegoeUI-SemiBold.woff') format('woff'),
+    url('../fonts/SegoeUI-SemiBold.eot') format('embedded-opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Segoe;
+  src: local('SegoeBold'),
+    local('Segoe-bold'),
+    url('../fonts/SegoeUI-Bold.woff2') format('woff2'),
+    url('../fonts/SegoeUI-Bold.woff') format('woff'),
+    url('../fonts/SegoeUI-Bold.eot') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Segoe;
+  src: local('SegoeBoldItalic'),
+    local('Segoe-bold-italic'),
+    url('../fonts/SegoeUI-BoldItalic.woff2') format('woff2'),
+    url('../fonts/SegoeUI-BoldItalic.woff') format('woff'),
+    url('../fonts/SegoeUI-BoldItalic.eot') format('embedded-opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

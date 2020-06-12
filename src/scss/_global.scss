@@ -1,3 +1,11 @@
+:root {
+  --main-red: #ED3237;
+  --main-green: #005A00;
+  --dark-grey: #AFAFAF;
+  --grey: #F2F2F2;
+  --light-grey: #FAFAFA;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -12,6 +20,16 @@ html,
 body {
   height: 100%;
   position: relative;
+  font-size: 16px;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Segoe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.33;
 }
 
 ul,
@@ -24,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+  margin: 0.25rem;
   padding: 0;
 }
 
@@ -32,7 +50,19 @@ a {
   text-decoration: none;
 }
 
-button:focus,
-input:focus {
-  outline: transparent;
+ul[class] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 106.25rem;
+  width: 100%;
+  padding: 0 1.875rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
 }

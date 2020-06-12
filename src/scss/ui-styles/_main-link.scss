@@ -1,0 +1,18 @@
+.main-link {
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all .3s;
+  color: black;
+
+  &:visited {
+    color: var(--dark-grey);
+  }
+
+  &:hover {
+    color: var(--main-red);
+  }
+
+  &:focus {
+    outline-color: var(--main-red);
+  }
+}
