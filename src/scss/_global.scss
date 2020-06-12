@@ -65,4 +65,27 @@ ul[class] {
 
 .flex {
   display: flex;
+  justify-content: space-between;
+
+  &.--col {
+    flex-direction: column;
+  }
+
+  &.--center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.content-wrapper {
+  height: 100%;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0;
 }

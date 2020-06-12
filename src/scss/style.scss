@@ -2,9 +2,12 @@
 @import 'vars';
 @import 'fonts';
 @import 'global';
+//STYLES-SECTION: BEM-blocks styles
 @import 'ui-styles/_main-link.scss';
+//!STYLES-SECTION
 //!STYLES-SECTION
 
 //STYLES-SECTION: pages and section styles include
 @import 'block-styles/_header';
+@import 'block-styles/_footer';
 //!STYLES-SECTION

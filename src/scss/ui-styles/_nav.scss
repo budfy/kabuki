@@ -1,0 +1,12 @@
+.nav-item {
+  align-items: center;
+  text-transform: uppercase;
+
+  & .header__nav-link {
+    transition: all .3s;
+
+    &:hover {
+      color: var(--main-red);
+    }
+  }
+}

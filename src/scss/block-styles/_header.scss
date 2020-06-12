@@ -36,8 +36,6 @@
   &__working-day-item {
     height: 1.5rem;
     width: 1.5rem;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
 
     &.--current {
@@ -62,26 +60,23 @@
 
   &__nav-item {
     margin: 0 1.875rem;
-    align-items: center;
-    text-transform: uppercase;
     position: relative;
 
-    &.--current .header__nav-link {
-      color: var(--main-red);
+    &.--current .header__nav-link &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0.3125rem;
+      border-top: 1px solid var(--main-red);
+      border-bottom: 1px solid var(--main-red);
       transition: all .3s;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 0.3125rem;
-        border-top: 1px solid var(--main-red);
-        border-bottom: 1px solid var(--main-red);
-        transition: all .3s;
-      }
     }
+  }
+
+  &__nav-link {
+    text-transform: uppercase;
   }
 
   &__nav-list:hover .header__nav-item.--current .header__nav-link {
@@ -154,9 +149,6 @@
     right: 0;
     background-color: var(--main-red);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
     font-size: 8px;
   }

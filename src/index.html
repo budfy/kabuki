@@ -3,11 +3,15 @@
 @@include('components/_head.html')
 
 <body>
-  @@include('components/_header.html')
-  <!-- WRITE CODE HERE -->
-
-  <!-- STOP WRITE CODE -->
-  @@include('components/_footer.html')
+  <div class="content-wrapper flex --col">
+    @@include('components/_header.html')
+    <main class="main">
+      <!-- WRITE CODE HERE -->
+      @@include('components/_hero-sect.html')
+      <!-- STOP WRITE CODE -->
+    </main>
+    @@include('components/_footer.html')
+  </div>
   @@include('components/_scripts.html')
 </body>
 
