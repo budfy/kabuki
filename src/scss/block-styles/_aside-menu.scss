@@ -1,0 +1,42 @@
+.aside {
+  flex: 0 0 12rem;
+
+  &__nav-item {
+    position: relative;
+    transition: all ease-out .3s;
+    margin-bottom: 1.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      right: calc(100% + 0.25rem);
+      background-color: var(--main-red);
+      top: 50%;
+    }
+
+    &:hover,
+    &.--current {
+      margin-left: 1.25rem;
+    }
+  }
+
+  &__nav-link {
+    color: black;
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+
+  &__nav-list:hover .aside__nav-item.--current {
+    margin-left: .25rem;
+  }
+
+  &__nav-list:hover .aside__nav-item.--current:hover {
+    margin-left: 1.25rem;
+  }
+}

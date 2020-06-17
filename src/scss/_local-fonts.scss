@@ -69,3 +69,27 @@
   font-style: italic;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Beautiful Bloom';
+  src: local('BeautifulBloom'),
+    local('Beautifulbloom'),
+    url('../fonts/BeautifulBloom-Regular.woff2') format('woff2'),
+    url('../fonts/BeautifulBloom-Regular.woff') format('woff'),
+    url('../fonts/BeautifulBloom-Regular.eot') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Black Han Sans';
+  src: local('Black Han Sans'),
+    local('BlackHanSans'),
+    url('../fonts/BlackHanSans-Regular.woff2') format('woff2'),
+    url('../fonts/BlackHanSans-Regular.woff') format('woff'),
+    url('../fonts/BlackHanSans-Regular.eot') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

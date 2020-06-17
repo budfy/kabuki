@@ -17,7 +17,7 @@ let gulp = require("gulp"),
 	pngquant = require("imagemin-pngquant"),
 	webp = require('gulp-webp'),
 	webphtml = require('gulp-webp-html'),
-	webpcss = require("gulp-webpcss"),
+	//webpcss = require("gulp-webpcss"),
 	uglify = require("gulp-uglify"), //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
@@ -79,7 +79,7 @@ gulp.task("scss", function () {
 				},
 			}),
 		)
-		.pipe(webpcss())
+		//.pipe(webpcss())
 		.pipe(sourcemaps.write("sourcemaps/")) //записываем карту в итоговый файл
 		.pipe(gulp.dest("build/css")) //кладём итоговый файл в директорию build/css
 		.pipe(
@@ -98,6 +98,8 @@ gulp.task("style", function () {
 		.src([
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
+			"node_modules/slick-carousel/slick/slick.css",
+			"node_modules/slick-carousel/slick/slick-theme.css"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -112,7 +114,8 @@ gulp.task("script", function () {
 	return gulp
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
-			"node_modules/jquery/dist/jquery.js"
+			"node_modules/jquery/dist/jquery.js",
+			"node_modules/slick-carousel/slick/slick.js"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())
@@ -161,7 +164,7 @@ gulp.task("html", function () {
 				basepath: "@file",
 			}),
 		)
-		.pipe(webphtml())
+		//.pipe(webphtml())
 		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/"))
 		.pipe(size())
@@ -303,7 +306,7 @@ gulp.task("watch", function () {
 		gulp.parallel("font-woff", "font-woff2", "font-eot"),
 	);
 	gulp.watch("src/js/**/*.js", gulp.parallel("minjs", "js"));
-	gulp.watch("src/images/**/*.*", gulp.parallel("images", "webp"));
+	gulp.watch("src/images/**/*.*", gulp.parallel("images"));
 });
 
 gulp.task("deploy", function () {

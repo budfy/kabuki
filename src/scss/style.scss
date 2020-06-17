@@ -3,11 +3,18 @@
 @import 'fonts';
 @import 'global';
 //STYLES-SECTION: BEM-blocks styles
-@import 'ui-styles/_main-link.scss';
+@import 'ui-styles/_main-link';
+@import 'ui-styles/_section-title';
+@import 'ui-styles/_product-item';
+@import 'ui-styles/_pagination';
 //!STYLES-SECTION
 //!STYLES-SECTION
 
 //STYLES-SECTION: pages and section styles include
 @import 'block-styles/_header';
+@import 'block-styles/_hero';
+@import 'block-styles/_categories';
+@import 'block-styles/_new';
 @import 'block-styles/_footer';
+@import 'page-styles/_menu'
 //!STYLES-SECTION

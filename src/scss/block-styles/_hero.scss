@@ -1,0 +1,118 @@
+.hero {
+  &__carousel {
+    .slick-dots {
+      position: absolute;
+      bottom: 2rem;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__slide-inner {
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 50%;
+    padding: 5.5rem 0 2.5rem 0;
+    min-height: 40rem;
+  }
+
+  &__slide-title {
+    font-size: 9rem;
+    color: white;
+    font-family: 'Beautiful Bloom';
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &.--bg {
+      position: absolute;
+      z-index: 0;
+      opacity: .1;
+      font-family: 'Black Han Sans';
+    }
+  }
+
+  &__slide-word {
+    position: absolute;
+
+    &.--left {
+      left: -3.75rem;
+      top: -4.5rem;
+    }
+
+    &.--right {
+      right: 3rem;
+      bottom: -4rem;
+    }
+  }
+
+  & &__title-img {
+    display: inline-block;
+    height: 12.5rem;
+    object-fit: contain;
+
+    &--positioned {
+      position: absolute;
+      height: 7rem;
+      top: 2rem;
+      left: -1rem;
+    }
+  }
+
+  &__title-word {
+    display: inline-block;
+  }
+
+  &__slide-text {
+    font-size: 1.25rem;
+    color: white;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__slide-link {
+    display: block;
+    padding: 0.75rem 1.75rem;
+    background: #FFB800;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0.3125rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    margin-top: 2.25rem;
+    transition: all .3s;
+
+    &:hover {
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &__slide-sub {
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    color: white;
+  }
+}

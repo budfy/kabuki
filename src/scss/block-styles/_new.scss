@@ -1,0 +1,39 @@
+.new {
+  margin-bottom: 5rem;
+
+  &__title {
+    margin: 5rem 0 2.5rem;
+  }
+
+  &__carousel.slick-slider {
+    margin-left: -1.5rem;
+
+    .slick-track {
+      padding: 0 0 2rem 0;
+
+      .carousel-item__wrapper {
+        padding-left: 1.4rem;
+      }
+    }
+
+    .slick-dots {
+      bottom: -18px;
+    }
+
+    .product-item {
+      max-height: 32rem;
+    }
+
+    .slick-prev {
+      left: 0;
+    }
+
+    .slick-next {
+      right: 0;
+    }
+  }
+
+  &__item {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+}

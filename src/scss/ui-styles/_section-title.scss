@@ -1,0 +1,25 @@
+.section-title {
+  position: relative;
+  font-weight: bold;
+  font-size: 1.875rem;
+  line-height: 2.5rem;
+  margin-left: 11.875rem !important;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    right: calc(100% + 0.625rem);
+    background-color: var(--main-red);
+  }
+
+  &::before {
+    top: calc(50% - 1px);
+  }
+
+  &::after {
+    top: calc(50% + 2px);
+  }
+}
