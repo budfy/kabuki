@@ -1,13 +1,6 @@
-:root {
-  --main-red: #ED3237;
-  --main-green: #005A00;
-  --dark-grey: #AFAFAF;
-  --grey: #F2F2F2;
-  --light-grey: #FAFAFA;
-}
-
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -16,11 +9,13 @@ html {
   box-sizing: inherit;
 }
 
-html,
+:focus {
+  outline-color: #ed323860;
+}
+
 body {
   height: 100%;
   position: relative;
-  font-size: 16px;
 }
 
 body {
@@ -54,6 +49,18 @@ ul[class] {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
 }
 
 .container {

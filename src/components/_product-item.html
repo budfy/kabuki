@@ -1,0 +1,283 @@
+<article class="product-item flex --col --hot --new product-item--options mix"
+  style="background-image: url(../images/pizza-1.jpg);">
+  <div class="product-item__top">
+    <div class="product-item__ingridients flex --col">
+      <p class="product-item__ingridients-list">Томатный соус, три вида сыра, помидоры, орегано</p>
+      <p class="product-item__ingridients-text">6 шт—167 г</p>
+    </div>
+    <div class="product-item__labels flex">
+      <div class="product-item__label product-item__label--hot"></div>
+      <div class="product-item__label product-item__label--vegan"></div>
+      <div class="product-item__label product-item__label--no-pork"></div>
+      <div class="product-item__label product-item__label--new"></div>
+    </div>
+  </div>
+
+  <form class="product-item__options">
+    <label class="product-item__size-wrapper" for="size-25">
+      <input class="product-item__size-checker" type="radio" name="Размер пиццы" id="size-25" checked>
+      <!-- Для имени нужно использовать ID товара -->
+      <span class="product-item__size-descr flex">
+        <span class="product-item__size-box product-item__cm">25 см</span>
+        <span class="product-item__size-box product-item__weight">375 г</span>
+        <span class="product-item__size-box product-item__money">290 р</span>
+      </span>
+    </label>
+    <label class="product-item__size-wrapper" for="size-30">
+      <input class="product-item__size-checker" type="radio" name="Размер пиццы" id="size-30">
+      <!-- Для имени нужно использовать ID товара -->
+      <span class="product-item__size-descr flex">
+        <span class="product-item__size-box product-item__cm">30 см</span>
+        <span class="product-item__size-box product-item__weight">550 г</span>
+        <span class="product-item__size-box product-item__money">390 р</span>
+      </span>
+    </label>
+    <label class="product-item__size-wrapper" for="size-35">
+      <input class="product-item__size-checker" type="radio" name="Размер пиццы" id="size-35">
+      <!-- Для имени нужно использовать ID товара -->
+      <span class="product-item__size-descr flex">
+        <span class="product-item__size-box product-item__cm">35 см</span>
+        <span class="product-item__size-box product-item__weight">330 г</span>
+        <span class="product-item__size-box product-item__money">560 р</span>
+      </span>
+    </label>
+    <div class="product-item__ingr">
+      <div class="product-item__ingr-list">
+        <div class="product-item__ingr-title">Ингредиенты</div>
+        <div class="product-item__ingr-wrapper">
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Сыр</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Сыр" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Грибы</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Грибы" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Помидор</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Помидор" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Маринованный огурец</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Маринованный огурец" readonly value="0"
+                min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Перец халапеньо</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Перец халапеньо" readonly value="0"
+                min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Бекон</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Бекон" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Курица</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Курица" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Креветки</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Креветки" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Салями</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Салями" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Ветчина</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Ветчина" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Острый соус</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Острый соус" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Перец болгарский</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Перец болгарский" readonly value="0"
+                min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Чоризо</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Чоризо" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Пепперони</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Пепперони" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Лосось</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Лосось" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+          <div class="product-item__ingr-row flex">
+            <span class="product-item__ingridient-name">Ананас</span>
+            <span class="product-item__ingridient-weight">50г</span>
+            <span class="product-item__ingridient-price">50р</span>
+            <span class="product-item__ingridient-counter product-item__ingridient-counter--no-count flex">
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--minus"></button>
+              <input type="number" class="product-item__ingridient-count" name="Ананас" readonly value="0" min="0">
+              <!-- В имени поля нужно использовать имя ингридиента вместе с ID товара -->
+              <button type="button"
+                class="product-item__ingridient-btn product-item__button product-item__button--plus"></button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <button class="product-item__ingridients-switcher product-item__button product-item__button--plus"
+        type="button">Добавить
+        ингредиенты</button>
+    </div>
+  </form>
+
+
+  <div class="product-item__descr flex">
+    <div class="product-item__text">
+      <div class="product-item__name">Маргарита</div>
+      <div class="product-item__price">390 р</div>
+    </div>
+    <div class="product-item__buttons flex">
+      <button class="product-item__button product-item__button--minus">
+        Убрать
+      </button>
+      <input type="number" class="product-item__count" name="Пицца" readonly value="0" min="0">
+      <button class="product-item__button product-item__button--plus">
+        Добавить
+      </button>
+    </div>
+  </div>
+</article>

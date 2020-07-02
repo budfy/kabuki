@@ -1,6 +1,8 @@
-.aside {
-  flex: 0 0 12rem;
+.menu__aside {
+  flex: 0 0 12.5rem;
+}
 
+.aside {
   &__nav-item {
     position: relative;
     transition: all ease-out .3s;
@@ -16,7 +18,7 @@
       height: 1px;
       width: 100%;
       right: calc(100% + 0.25rem);
-      background-color: var(--main-red);
+      background-color: $main-red;
       top: 50%;
     }
 
@@ -30,6 +32,10 @@
     color: black;
     font-weight: bold;
     font-size: 1.125rem;
+
+    &:focus {
+      outline-color: transparent;
+    }
   }
 
   &__nav-list:hover .aside__nav-item.--current {

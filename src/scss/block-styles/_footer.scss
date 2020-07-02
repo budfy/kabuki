@@ -65,15 +65,15 @@
     width: auto;
 
     &:hover .footer__social-icon {
-      fill: var(--main-red);
+      fill: $main-red;
     }
 
     &:focus {
-      outline-color: var(--dark-grey);
+      outline-color: $dark-grey;
       outline-width: 1px;
 
       .footer__social-icon {
-        fill: var(--dark-grey);
+        fill: $dark-grey;
       }
     }
   }

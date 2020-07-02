@@ -1,0 +1,15 @@
+.promotion__block {
+  margin: 2rem 0;
+  padding: 0 2rem;
+  height: 40rem;
+  position: relative;
+
+  .promotions__slide-word.--left {
+    left: 0;
+  }
+
+  .promotions__slide-word.--right {
+    right: 0;
+  }
+
+}

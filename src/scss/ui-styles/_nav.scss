@@ -6,7 +6,7 @@
     transition: all .3s;
 
     &:hover {
-      color: var(--main-red);
+      color: $main-red;
     }
   }
 }

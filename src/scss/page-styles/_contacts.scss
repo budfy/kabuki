@@ -1,0 +1,62 @@
+.contacts {
+  &__box {
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 5rem;
+  }
+
+  &__text-wrapper {
+    flex: 0 0 12.5rem;
+  }
+
+  &__map-wrapper {
+    flex: 0 1 75rem;
+    display: flex;
+    flex-direction: column;
+
+    & iframe {
+      border: none;
+      height: 31rem;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__box-title {
+    margin: 1.875rem 0 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  &__link {
+    display: block;
+    color: black;
+    font-size: 1.125rem;
+    transition: all .3s;
+    margin-bottom: 0.75rem;
+
+    &:hover {
+      color: $main-red;
+    }
+  }
+
+  &__work-time {
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  &__work-day,
+  &__work-hours {
+    display: block;
+    font-size: 1.125rem;
+  }
+
+  &__work-hours {
+    margin-left: auto;
+  }
+
+  &__map-address {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+}

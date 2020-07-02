@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('components/_head.html')
+
+<body>
+  <div class="content-wrapper flex --col">
+    @@include('components/_header.html')
+    @@include('components/_pagination.html')
+    <div class="page-title flex">
+      <h2 class="section-title page-title__text">
+        Суши&Роллы
+      </h2>
+      <ul class="page-title__filter flex">
+        <li class="page__filter-item --current"><button class="page__filter-btn" type="button"
+            data-filter="all">Все</button></li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button" data-filter=".sushi">Суши</button>
+        </li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button"
+            data-filter=".gunkan">Гункан</button></li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button"
+            data-filter=".sashimi">Сашими</button></li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button" data-filter=".roll">Роллы</button>
+        </li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button"
+            data-filter=".baked-roll">Запеченные роллы</button></li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button" data-filter=".hot-roll">Теплые
+            роллы</button></li>
+        <li class="page__filter-item"><button class="page__filter-btn" type="button" data-filter=".set">Сеты</button>
+        </li>
+      </ul>
+    </div>
+    <main class="main">
+      <!-- WRITE CODE HERE -->
+      <div class="container">
+        <section class="products products--filter">
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+          @@include('components/_product-item.html')
+        </section>
+      </div>
+      <!-- STOP WRITE CODE -->
+    </main>
+    @@include('components/_footer.html')
+  </div>
+  @@include('components/_scripts.html')
+</body>
+
+</html>

@@ -12,7 +12,7 @@
     height: 1px;
     width: 100%;
     right: calc(100% + 0.625rem);
-    background-color: var(--main-red);
+    background-color: $main-red;
   }
 
   &::before {

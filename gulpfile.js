@@ -16,8 +16,8 @@ let gulp = require("gulp"),
 	recompress = require("imagemin-jpeg-recompress"), //тоже пережимает, но лучше. Плагин для плагина
 	pngquant = require("imagemin-pngquant"),
 	webp = require('gulp-webp'),
-	webphtml = require('gulp-webp-html'),
-	//webpcss = require("gulp-webpcss"),
+	webphtml = require('gulp-webp-html'), //fixme: fix webp
+	//webpcss = require("gulp-webpcss"), //todo: fix webp
 	uglify = require("gulp-uglify"), //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
@@ -99,7 +99,8 @@ gulp.task("style", function () {
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
 			"node_modules/slick-carousel/slick/slick.css",
-			"node_modules/slick-carousel/slick/slick-theme.css"
+			"node_modules/slick-carousel/slick/slick-theme.css",
+			"node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -115,7 +116,9 @@ gulp.task("script", function () {
 		.src([
 			//тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
 			"node_modules/jquery/dist/jquery.js",
-			"node_modules/slick-carousel/slick/slick.js"
+			"node_modules/slick-carousel/slick/slick.js",
+			"node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
+			"node_modules/mixitup/dist/mixitup.js"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())

@@ -6,13 +6,13 @@
   }
 
   &__carousel.slick-slider {
-    margin-left: -1.5rem;
+    margin: 0 -1rem;
 
     .slick-track {
       padding: 0 0 2rem 0;
 
       .carousel-item__wrapper {
-        padding-left: 1.4rem;
+        padding: 0 1rem;
       }
     }
 
@@ -31,9 +31,5 @@
     .slick-next {
       right: 0;
     }
-  }
-
-  &__item {
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   }
 }

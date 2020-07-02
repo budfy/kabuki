@@ -5,14 +5,14 @@
   color: black;
 
   &:visited {
-    color: var(--dark-grey);
+    color: $dark-grey;
   }
 
   &:hover {
-    color: var(--main-red);
+    color: $main-red;
   }
 
   &:focus {
-    outline-color: var(--main-red);
+    outline-color: $main-red;
   }
 }
