@@ -4,6 +4,7 @@
   "description": "Sushi and pizza site",
   "main": "gulpfile.js",
   "dependencies": {
+    "aos": "^2.3.4",
     "gulp-webpcss": "^1.1.1",
     "jquery": "^3.4.1",
     "malihu-custom-scrollbar-plugin": "^3.1.5",

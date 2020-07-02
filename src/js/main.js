@@ -1,4 +1,6 @@
 $(function () {
+  AOS.init();
+
   $(".hero__carousel").slick({
     dots: true,
     arrows: true,
@@ -99,6 +101,54 @@ $(function () {
   $(".page__filter-item").click(function () {
     $(this).addClass("--current");
     $(this).siblings().removeClass("--current");
-  })
+  });
+
+  $('.product-item__ingr-wrapper').mCustomScrollbar({
+    //autoHideScrollbar: true,
+    theme: "ingridient-scroll",
+    scrollButtons: {
+      enable: true
+    },
+  });
+
+  $(".modal-call").click(function () {
+    let modal = $(this).data("modal");
+    console.log("modal", modal)
+    $(".modal").fadeIn(260);
+    $("body").addClass("no-scroll");
+    $(modal).siblings(".modal__wrapper").fadeOut();
+    setTimeout(() => {
+      $(modal).fadeIn(260);
+    }, 100);
+  });
+
+  $(".modal__overlay, .modal__close").click(function () {
+    $(".modal__wrapper").fadeOut(260);
+    $(".modal").fadeOut(260);
+    $("body").removeClass("no-scroll");
+  });
+
+  $("#modal-reg__birthday").focusin(function () {
+    $(this).addClass("full");
+    $(this).siblings(".modal__form-placeholder").hide();
+  });
+
+  $("#modal-reg__birthday").focusout(function () {
+    if ($(this).val() != "") {
+      $(this).addClass("full");
+      $(this).siblings(".modal__form-placeholder").hide();
+    } else {
+      $(this).removeClass("full");
+      $(this).siblings(".modal__form-placeholder").show();
+    }
+  });
+
+  $(".modal__btn[data-modal]").click(function () {
+    let modal = $(this).data("modal");
+    $(this).parents(".modal__wrapper").fadeOut(260);
+    setTimeout(() => {
+      $(modal).fadeIn(260);
+    }, 300);
+  });
 
 });

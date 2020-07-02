@@ -100,7 +100,8 @@ gulp.task("style", function () {
 			"node_modules/normalize.css/normalize.css",
 			"node_modules/slick-carousel/slick/slick.css",
 			"node_modules/slick-carousel/slick/slick-theme.css",
-			"node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"
+			"node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css",
+			"node_modules/aos/dist/aos.css"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -118,7 +119,8 @@ gulp.task("script", function () {
 			"node_modules/jquery/dist/jquery.js",
 			"node_modules/slick-carousel/slick/slick.js",
 			"node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
-			"node_modules/mixitup/dist/mixitup.js"
+			"node_modules/mixitup/dist/mixitup.js",
+			"node_modules/aos/dist/aos.js"
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())

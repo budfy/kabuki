@@ -44,7 +44,7 @@
       </ul>
       <div class="header__icons flex">
 
-        <a href="#" class="header__icon header__icon-user">
+        <a href="" class="header__icon header__icon-user modal-call" data-modal="#modal-login">
           <svg class="icon-svg header__icon-pic" width="25" height="26" viewBox="0 0 25 26" fill=""
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -55,6 +55,18 @@
               fill="" />
           </svg>
         </a>
+
+        <button class="header__icon header__icon-user modal-call" data-modal="#modal-login">
+          <svg class="icon-svg header__icon-pic" width="25" height="26" viewBox="0 0 25 26" fill=""
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.3266 14.2354C8.45001 14.2354 5.29532 11.0807 5.29532 7.2041C5.29532 3.32754 8.45001 0.172852 12.3266 0.172852C16.2031 0.172852 19.357 3.32754 19.357 7.2041C19.357 11.0807 16.2031 14.2354 12.3266 14.2354ZM12.3266 1.73535C9.31094 1.73535 6.85782 4.18848 6.85782 7.2041C6.85782 10.2197 9.31094 12.6729 12.3266 12.6729C15.3414 12.6729 17.7945 10.2197 17.7945 7.2041C17.7945 4.18848 15.3422 1.73535 12.3266 1.73535Z"
+              fill="" />
+            <path
+              d="M22.7476 25.173H2.25232L3.18123 16.809L7.52185 15.0723L8.1031 16.5238L4.63123 17.9121L3.99763 23.6105H21.0023L20.3687 17.9121L16.8969 16.5238L17.4781 15.0723L21.8187 16.809L22.7476 25.173Z"
+              fill="" />
+          </svg>
+        </button>
 
         <button class="header__icon header__icon-cart --full"><svg class="header__icon-pic" width="32" height="32"
             viewBox="0 0 32 32" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +229,86 @@
   </div>
 </footer>
   </div>
-  <script async src="js/webp.min.js"></script>
+  <div class="modal" role="dialog" aria-modal="true">
+  <div class="modal__overlay" tabindex="0"></div>
+  <div class="modal__wrapper" id="modal-login">
+    <button class="modal__close">Закрыть</button>
+    <p class="modal__title">Личный кабинет</p>
+    <form class="modal__form">
+      <label for="modal-login__phone" class="modal__form-label">
+        <input type="tel" class="modal__form-input form-input" id="modal-login__phone" required placeholder="Телефон"
+          name="Телефон">
+      </label>
+      <label for="modal-login__pass" class="modal__form-label">
+        <input type="password" class="modal__form-input form-input" id="modal-login__pass" required placeholder="Пароль"
+          name="Пароль">
+      </label>
+      <div class="modal__btn-box flex">
+        <button class="modal__btn btn btn--red  btn--s" type="submit">Войти</button>
+        <button class="modal__btn btn btn--transparent btn--l" data-modal="#modal-registration"
+          type="button">Зарегистрироваться</button>
+        <button class="modal__btn modal__pass-reset" type="button" data-modal="#modal-password">Восстановить
+          пароль</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal__wrapper" id="modal-registration">
+    <button class="modal__close">Закрыть</button>
+    <p class="modal__title">Регистрация</p>
+    <form class="modal__form flex --col">
+      <label for="modal-reg__name" class="modal__form-label">
+        <input type="text" class="modal__form-input form-input" required placeholder="Имя" name="Имя"
+          id="modal-reg__name">
+      </label>
+      <label for="modal-reg__phone" class="modal__form-label">
+        <input type="tel" class="modal__form-input form-input" required placeholder="Телефон" name="Телефон"
+          id="modal-reg__phone">
+      </label>
+      <label for="modal-reg__email" class="modal__form-label">
+        <input type="email" class="modal__form-input form-input" required placeholder="E–mail" name="E–mail"
+          id="modal-reg__email">
+      </label>
+      <label for="modal-reg__birthday" class="modal__form-label modal__form-label--ph">
+        <input type="date" class="modal__form-input form-input" required name="Дата-рождения" id="modal-reg__birthday"
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+        <span class="modal__form-placeholder">Дата рождения</span>
+      </label>
+      <label for="modal-reg__password" class="modal__form-label">
+        <input type="password" class="modal__form-input form-input" required placeholder="Пароль" name="Пароль"
+          id="modal-reg__password">
+      </label>
+      <label for="modal-reg__pers" class="modal__form-label modal__form-label--check flex">
+        <input class="modal__form-check" type="checkbox" name="Согласие на обработку персональных данных"
+          id="modal-reg__pers" checked>
+        <span class="modal__check-descr">Согласен на обработку персональных данных</span>
+      </label>
+      <div class="modal__btn-box flex">
+        <button class="modal__btn btn btn--red btn--l" type="submit">Зарегистрироваться</button>
+        <button class="modal__btn btn btn--transparent btn--s" type="reset">Отмена</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal__wrapper" id="modal-password">
+    <button class="modal__close">Закрыть</button>
+    <p class="modal__title">Восстановление пароля</p>
+    <form class="modal__form">
+      <label for="modal__reset-email" class="modal__form-label">
+        <input type="email" class="modal__form-input form-input" required placeholder="E–mail*" name="e-mail"
+          id="modal__reset-email">
+      </label>
+      <p class="modal____form-descr">
+        *На Вашу почту придет письмо с инструкцией
+      </p>
+      <div class="modal__btn-box flex">
+        <button class="modal__btn btn btn--red btn--l" type="submit">Отправить</button>
+        <button class="modal__btn btn btn--transparent btn--s" type="reset">Отмена</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script async src="js/webp.min.js"></script>
 <script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
 </body>

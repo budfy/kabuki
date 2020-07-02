@@ -1,7 +1,16 @@
 .page-title {
   margin-bottom: 2.5rem;
 
-  &__filter {}
+  &__text {}
+
+  &__wrapper {
+    flex: 0 0 100%;
+  }
+
+  &__filter {
+    width: 100%;
+    justify-content: flex-end;
+  }
 
 }
 

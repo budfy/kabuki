@@ -1,0 +1,13 @@
+.form-input {
+  width: 100%;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: $main-red;
+  padding: 0.625rem 0;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+
+  &::placeholder {
+    color: #a8a8a8;
+  }
+}

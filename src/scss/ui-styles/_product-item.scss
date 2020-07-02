@@ -244,6 +244,14 @@
     position: relative;
   }
 
+  &__ingr-title {
+    margin-bottom: 1rem;
+  }
+
+  &__ingr-wrapper {
+    max-height: 20rem;
+  }
+
   &__ingridients-switcher {
     border: 1px solid #c6c6c680;
     background-color: $grey;
@@ -286,8 +294,10 @@
   }
 
   &__ingridient-name {
-    flex: 0 0 10rem;
+    flex: 0 1 10rem;
     line-height: 1.1875rem;
+    word-break: keep-all;
+    word-wrap: break-word;
   }
 
   &__ingridient-weight {
@@ -321,6 +331,7 @@
     flex: 0 1 2.5rem;
     max-width: 2.5rem;
     text-align: center;
+    margin-bottom: auto;
   }
 
   &__ingridient-counter {
@@ -337,6 +348,43 @@
 
       .product-item__ingridient-count {
         color: $dark-grey;
+      }
+    }
+  }
+
+  .mCS-ingridient-scroll {
+
+    .mCSB_buttonUp,
+    .mCSB_buttonDown {
+      border: 1px solid #afafaf;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 0.875rem;
+      width: 0.875rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 0L10.2631 8.25H0.73686L5.5 0Z' fill='%23DBDBDB'/%3E%3C/svg%3E%0A");
+    }
+
+    .mCSB_buttonDown {
+      transform: rotate(180deg);
+    }
+
+    .mCSB_draggerContainer {
+      background: #FFFFFF;
+      box-shadow: inset 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
+      width: 0.875rem;
+    }
+
+    .mCSB_dragger {
+      background: #DBDBDB;
+      border-radius: 0.375rem;
+
+      .mCSB_dragger_bar {
+        background-color: transparent;
+      }
+
+      .mCSB_draggerRail {
+        background-color: transparent;
       }
     }
   }
