@@ -75,41 +75,11 @@
       margin-top: 10px;
     }
 
-    &--ph {
-      border-width: 0 0 1px 0;
-      border-color: $main-red;
-      border-style: solid;
-
-      & .modal__form-input {
-        opacity: 0;
-        border: none;
-
-        &:focus,
-        &.full {
-          opacity: 1;
-
-          &+.modal__form-placeholder {
-            display: none;
-          }
-        }
-      }
-    }
-
     &--check.flex {
       margin: 1.25rem 0;
       align-items: center;
       justify-content: flex-start;
     }
-  }
-
-  &__form-placeholder {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #a8a8a8;
-    font-size: 0.875rem;
-    line-height: 1.1875rem;
   }
 
   &__form-check {

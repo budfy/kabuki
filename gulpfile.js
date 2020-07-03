@@ -120,7 +120,8 @@ gulp.task("script", function () {
 			"node_modules/slick-carousel/slick/slick.js",
 			"node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
 			"node_modules/mixitup/dist/mixitup.js",
-			"node_modules/aos/dist/aos.js"
+			"node_modules/aos/dist/aos.js",
+			'node_modules/inputmask/dist/jquery.inputmask.js'
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())

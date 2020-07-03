@@ -44,7 +44,7 @@
       </ul>
       <div class="header__icons flex">
 
-        <a href="" class="header__icon header__icon-user modal-call" data-modal="#modal-login">
+        <a href="cabinet.html" class="header__icon header__icon-user modal-call" data-modal="#modal-login">
           <svg class="icon-svg header__icon-pic" width="25" height="26" viewBox="0 0 25 26" fill=""
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -68,8 +68,8 @@
           </svg>
         </button>
 
-        <button class="header__icon header__icon-cart --full"><svg class="header__icon-pic" width="32" height="32"
-            viewBox="0 0 32 32" fill="" xmlns="http://www.w3.org/2000/svg">
+        <a href="cart.html" class="header__icon header__icon-cart --full"><svg class="header__icon-pic" width="32"
+            height="32" viewBox="0 0 32 32" fill="" xmlns="http://www.w3.org/2000/svg">
             <path d="M28.835 22H9.24L4.24 4H1V2H5.76L10.76 20H27.165L28.802 11H13.045V9H31.198L28.835 22Z" fill="" />
             <path
               d="M12 30C10.346 30 9 28.654 9 27C9 25.346 10.346 24 12 24C13.654 24 15 25.346 15 27C15 28.654 13.654 30 12 30ZM12 26C11.448 26 11 26.448 11 27C11 27.552 11.448 28 12 28C12.552 28 13 27.552 13 27C13 26.448 12.552 26 12 26Z"
@@ -84,7 +84,7 @@
           <span class="header__icon-counter flex --center">
             <span class="header__counter-text">0</span>
           </span>
-        </button>
+        </a>
 
       </div>
     </div>
@@ -105,7 +105,7 @@
     </ul>
   </nav>
 </div>
-    <div class="page-title flex">
+    <div class="page-title container flex">
       <h2 class="section-title page-title__text">
         Суши&Роллы
       </h2>
@@ -3920,13 +3920,13 @@
           id="modal-reg__phone">
       </label>
       <label for="modal-reg__email" class="modal__form-label">
-        <input type="email" class="modal__form-input form-input" required placeholder="E–mail" name="E–mail"
-          id="modal-reg__email">
+        <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail"
+          name="E–mail" id="modal-reg__email">
       </label>
-      <label for="modal-reg__birthday" class="modal__form-label modal__form-label--ph">
-        <input type="date" class="modal__form-input form-input" required name="Дата-рождения" id="modal-reg__birthday"
-          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
-        <span class="modal__form-placeholder">Дата рождения</span>
+      <label for="modal-reg__birthday" class="modal__form-label form-label--ph">
+        <input type="date" class="modal__form-input form-input  form-input--ph" required name="Дата-рождения"
+          id="modal-reg__birthday">
+        <span class="form-placeholder">Дата рождения</span>
       </label>
       <label for="modal-reg__password" class="modal__form-label">
         <input type="password" class="modal__form-input form-input" required placeholder="Пароль" name="Пароль"
@@ -3949,8 +3949,8 @@
     <p class="modal__title">Восстановление пароля</p>
     <form class="modal__form">
       <label for="modal__reset-email" class="modal__form-label">
-        <input type="email" class="modal__form-input form-input" required placeholder="E–mail*" name="e-mail"
-          id="modal__reset-email">
+        <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail*"
+          name="e-mail" id="modal__reset-email">
       </label>
       <p class="modal____form-descr">
         *На Вашу почту придет письмо с инструкцией

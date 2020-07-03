@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('components/_head.html')
+
+<body>
+  <div class="content-wrapper flex --col">
+    @@include('components/_header.html')
+    <div class="cabinet">
+      @@include('components/_pagination.html')
+      <main class="main">
+        <!-- WRITE CODE HERE -->
+        <div class="container">
+          <h2 class="page-title section-title">Личный кабинет</h2>
+          <div class="cabinet__form-wrapper flex">
+            <form class="cabinet__profile cabinet__form">
+              <h3 class="cabinet__form-title form-title">Профиль</h3>
+              <label for="cabinet-name" class="cabinet__label">
+                <input type="text" class="cabinet__input form-input" id="cabinet-name" name="Имя" placeholder="Имя">
+              </label>
+              <label for="cabinet-phone" class="cabinet__label">
+                <input type="tel" class="cabinet__input form-input" id="cabinet-phone" name="Телефон"
+                  placeholder="Телефон">
+              </label>
+              <label for="cabinet-email" class="cabinet__label">
+                <input type="text" class="cabinet__input form-input form-input--email" id="cabinet-email" name="E–mail"
+                  placeholder="E–mail">
+              </label>
+              <label for="cabinet-birthday" class="cabinet__label form-label--ph">
+                <input type="date" class="cabinet__input form-input form-input--ph" id="cabinet-birthday"
+                  name="Дата рождения">
+                <span class="form-placeholder">Дата рождения</span>
+              </label>
+            </form>
+
+            <form class="cabinet__address cabinet__form">
+              <h3 class="cabinet__form-title form-title">Адрес</h3>
+              <div class="cabinet__address-item flex" id="address-item-1">
+                <label for="cabinet__build" class="cabinet__label">
+                  <input type="text" class="cabinet__input form-input cabinet__input--build" name="Здание"
+                    id="cabinet__build" placeholder="мкр __, дом/здание ___, кв/офис ___">
+                </label>
+                <label for="cabinet__set" class="cabinet__label cabinet__label--s">
+                  <input type="text" class="cabinet__input form-input cabinet__input--set" name="Подъезд"
+                    id="cabinet__set" placeholder="подъезд _">
+                </label>
+                <label for="cabinet__floor" class="cabinet__label cabinet__label--s">
+                  <input type="text" class="cabinet__input form-input cabinet__input--floor" name="Этаж"
+                    id="cabinet__floor" placeholder="этаж _">
+                </label>
+              </div>
+              <button class="cabinet__btn btn btn--transparent btn--l add-item-js" type="button">
+                <span class="cabinet__btn-text">Добавить адрес</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- STOP WRITE CODE -->
+      </main>
+    </div>
+    @@include('components/_footer.html')
+  </div>
+  @@include('components/_modal.html')
+  @@include('components/_scripts.html')
+</body>
+
+</html>

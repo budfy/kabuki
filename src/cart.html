@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('components/_head.html')
+
+<body>
+  <div class="content-wrapper flex --col">
+    @@include('components/_header.html')
+    <div class="cart">
+      @@include('components/_pagination.html')
+      <main class="main">
+        <!-- WRITE CODE HERE -->
+        <div class="container">
+          <h2 class="page-title section-title">Корзина</h2>
+          <p class="cart__subtitle-empty">Ваша корзина пуста</p>
+          <form action="" class="cart__offer flex --col">
+
+            <!-- SECTION - products offer -->
+            <div class="cart__offer-products">
+
+              @@include('components/_cart__offer-item.html')
+              @@include('components/_cart__offer-item.html')
+              @@include('components/_cart__offer-item.html')
+              @@include('components/_cart__offer-item.html')
+              @@include('components/_cart__offer-item.html')
+
+            </div>
+            <!-- !!SECTION  -->
+
+            <!-- SECTION - persons -->
+            <div class="cart__offer-persons flex">
+              <p class="cart__persons-text">
+                Количество персон:
+              </p>
+              <div class="cart__persons-buttons flex">
+                <button type="button" class="cart__offer-minus product-item__button product-item__button--minus">
+                  Убрать
+                </button>
+                <input type="number"
+                  class="cart__offer-count-input number product-item__count product-item__ingridient-count"
+                  name="Количество персон" readonly value="1" min="1">
+                <button type="button" class="cart__offer-plus product-item__button product-item__button--plus">
+                  Добавить
+                </button>
+              </div>
+            </div>
+            <!-- !SECTION -->
+
+            <div class="cart__offer-summ flex">
+              <span class="cart__summ-text">Сумма заказа:</span>
+              <span class="cart__summ-number">1 269 р</span>
+            </div>
+
+
+            <div class="cart__offer-delivery">
+              <p class="cart__delivery-title">
+                Оформить заказ:
+              </p>
+
+              <div class="cart__delivery-time">
+                <label for="time-now" class="cart__radio-time cart__radio">
+                  <input type="radio" class="cart__delivery-time-radio cart__radio-input" id="time-now"
+                    name="Время доставки" checked>
+                  <span class="cart__deliverry-type-descr cart__radio-descr">
+                    Как можно скорее <span class="cart__descr-sub">(в течении часа)</span>
+                  </span>
+                </label>
+
+                <label for="time-schedule" class="cart__radio-time cart__radio">
+                  <input type="radio" class="cart__delivery-time-radio cart__radio-input" id="time-schedule"
+                    name="Время доставки">
+                  <span class="cart__deliverry-type-descr cart__radio-descr">
+                    К определенному времени
+                  </span>
+                </label>
+
+                <div class="cart__schedule-wrapper">
+                  <div class="cart__delivery-schedule flex">
+                    <label for="delivery-day" class="cart__delivery-time-select">
+                      <input type="date" class="cart__text-input form-input" name="Дата доставки" id="delivery-day">
+                    </label>
+                    <label for="delivery-time" class="cart__delivery-time-select">
+                      <input type="time" name="Время доставки" id="delivery-time" class="form-input cart__text-input">
+                    </label>
+                  </div>
+                </div>
+
+                <label for="offer-phone" class="cart__delivery-phone">
+                  <input type="tel" class="cart__delivery-phone-input cart__text-input form-input"
+                    placeholder="+7 (____) ___-__-__" id="offer-phone">
+                  <span class="cart__phone-descr">(укажите телефон)</span>
+                </label>
+              </div>
+
+              <div class="cart__offer-comment">
+                <p class="cart__comment-title">Комментарий к заказу:</p>
+                <textarea name="" id="" cols="30" rows="5" class="cart__comment-field"
+                  placeholder="Комментарий..."></textarea>
+              </div>
+
+              <div class="cart__delivery-type flex">
+
+                <label for="with-delivery" class="cart__radio cart__delivery-type">
+                  <input type="radio" class="cart__radio-input cart__delivery-type-radio" id="with-delivery"
+                    name="Доставка или самовывоз" checked>
+                  <span class="cart__deliverry-type-descr cart__radio-descr">
+                    Доставка курьером
+                  </span>
+                </label>
+
+                <label for="without-delivery" class="cart__radio cart__delivery-type">
+                  <input type="radio" class="cart__radio-input cart__delivery-type-radio" id="without-delivery"
+                    name="Доставка или самовывоз">
+                  <span class="cart__deliverry-type-descr cart__radio-descr">
+                    Самовывоз
+                  </span>
+                </label>
+
+              </div>
+
+              <div class="cart__address-wrapper">
+
+                <div class="cart__address-item flex" id="address-item-1">
+                  <label for="address-switch-1" class="cart__radio cart__radio--inline cart__delivery-address-switch">
+                    <input type="radio" class="cart__radio-input cart__delivery-address-radio" id="address-switch-1"
+                      name="Выбор адреса" checked>
+                    <span class="cart__deliverry-type-descr cart__radio-descr">
+                    </span>
+                  </label>
+                  <div class="cart__address-input-wrapper flex">
+                    <label for="cart__build" class="cart__label">
+                      <input type="text" class="cart__input form-input cart__input--build" name="Здание"
+                        id="cart__build" placeholder="мкр __, дом/здание ___, кв/офис ___">
+                    </label>
+                    <label for="cart__set" class="cart__label cart__label--s">
+                      <input type="text" class="cart__input form-input cart__input--set" name="Подъезд" id="cart__set"
+                        placeholder="подъезд _">
+                    </label>
+                    <label for="cart__floor" class="cart__label cart__label--s">
+                      <input type="text" class="cart__input form-input cart__input--floor" name="Этаж" id="cart__floor"
+                        placeholder="этаж _">
+                    </label>
+                  </div>
+                </div>
+
+                <div class="cart__address-item flex" id="address-item-1">
+                  <label for="address-switch-2" class="cart__radio cart__radio--inline cart__delivery-address-switch">
+                    <input type="radio" class="cart__radio-input cart__delivery-address-radio" id="address-switch-2"
+                      name="Выбор адреса">
+                    <span class="cart__deliverry-type-descr cart__radio-descr">
+                    </span>
+                  </label>
+                  <div class="cart__address-input-wrapper flex">
+                    <label for="cart__build" class="cart__label">
+                      <input type="text" class="cart__input form-input cart__input--build" name="Здание"
+                        id="cart__build" placeholder="мкр __, дом/здание ___, кв/офис ___" disabled>
+                    </label>
+                    <label for="cart__set" class="cart__label cart__label--s">
+                      <input type="text" class="cart__input form-input cart__input--set" name="Подъезд" id="cart__set"
+                        placeholder="подъезд _" disabled>
+                    </label>
+                    <label for="cart__floor" class="cart__label cart__label--s">
+                      <input type="text" class="cart__input form-input cart__input--floor" name="Этаж" id="cart__floor"
+                        placeholder="этаж _" disabled>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="cart__address-item flex" id="address-item-1">
+                  <label for="address-switch-3" class="cart__radio cart__radio--inline cart__delivery-address-switch">
+                    <input type="radio" class="cart__radio-input cart__delivery-address-radio" id="address-switch-3"
+                      name="Выбор адреса">
+                    <span class="cart__deliverry-type-descr cart__radio-descr">
+                    </span>
+                  </label>
+                  <div class="cart__address-input-wrapper flex">
+                    <label for="cart__build" class="cart__label">
+                      <input type="text" class="cart__input form-input cart__input--build" name="Здание"
+                        id="cart__build" placeholder="мкр __, дом/здание ___, кв/офис ___" disabled>
+                    </label>
+                    <label for="cart__set" class="cart__label cart__label--s">
+                      <input type="text" class="cart__input form-input cart__input--set" name="Подъезд" id="cart__set"
+                        placeholder="подъезд _" disabled>
+                    </label>
+                    <label for="cart__floor" class="cart__label cart__label--s">
+                      <input type="text" class="cart__input form-input cart__input--floor" name="Этаж" id="cart__floor"
+                        placeholder="этаж _" disabled>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <buttun type="submit" class="cart__offer-submit btn btn--red btn--l">Оплатить заказ</buttun>
+          </form>
+        </div>
+        <!-- STOP WRITE CODE -->
+      </main>
+    </div>
+    @@include('components/_footer.html')
+  </div>
+  @@include('components/_modal.html')
+  @@include('components/_scripts.html')
+</body>
+
+</html>

@@ -1,3 +1,35 @@
+.form-label--ph {
+  border-width: 0 0 1px 0;
+  border-color: $main-red;
+  border-style: solid;
+  position: relative;
+  display: block;
+
+  & .form-input--ph {
+    opacity: 0;
+    border: none;
+
+    &:focus,
+    &.full {
+      opacity: 1;
+
+      &+.form-placeholder {
+        display: none;
+      }
+    }
+  }
+}
+
+.form-placeholder {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a8a8a8;
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+}
+
 .form-input {
   width: 100%;
   border-width: 0 0 1px 0;
@@ -6,8 +38,42 @@
   padding: 0.625rem 0;
   font-size: 0.875rem;
   line-height: 1.1875rem;
+  background-color: transparent;
+  display: block;
+  transition: all 0.26s;
+
+  &:disabled {
+    color: #adadad;
+    border-color: $dark-grey;
+  }
 
   &::placeholder {
     color: #a8a8a8;
+    transition: all 0.26s;
+  }
+}
+
+.invalid input {
+  color: $main-red;
+  font-weight: 700;
+  animation-name: inv;
+  animation-duration: .1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.26s;
+  animation-iteration-count: 3;
+  animation-direction: backwards;
+
+  &::placeholder {
+    color: $main-red;
+  }
+}
+
+@keyframes inv {
+  from {
+    transform: translateX(-1%);
+  }
+
+  to {
+    transform: translateX(1%);
   }
 }

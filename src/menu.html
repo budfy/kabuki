@@ -6,9 +6,11 @@
   <div class="content-wrapper flex --col">
     @@include('components/_header.html')
     @@include('components/_pagination.html')
-    <h1 class="section-title">
-      Меню
-    </h1>
+    <div class="container">
+      <h1 class="section-title page-title">
+        Меню
+      </h1>
+    </div>
     <div class="menu-wrapper flex container">
       @@include('components/_menu-aside.html')
       <main class="main" style="background-image: url(images/menu-bg.jpg)">
@@ -19,7 +21,7 @@
     @@include('components/_footer.html')
   </div>
   @@include('components/_modal.html')
-@@include('components/_scripts.html')
+  @@include('components/_scripts.html')
 </body>
 
 </html>

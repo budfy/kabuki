@@ -1,0 +1,82 @@
+.cabinet {
+  background-image: url(../images/cabinet-bg.jpg);
+  background-size: cover;
+  background-position: right 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  padding-bottom: 5rem;
+  transition: all ease 0.26s;
+
+  &__form-wrapper {
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  &__form {
+    flex: 0 1 18.125rem;
+  }
+
+  &__address {
+    margin-left: 6.25rem;
+  }
+
+  &__address-item {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__label {
+    flex: 0 0 100%;
+
+
+    &--s {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+  }
+
+  &__input {
+    &:focus {
+      background-color: #ffffffaa;
+    }
+
+    &::placeholder {
+      color: #000000;
+    }
+  }
+
+  &__address-remove {
+    position: absolute;
+    top: 1rem;
+    left: -1.75rem;
+  }
+
+  &__btn {
+    margin-top: 1.25rem;
+    width: 100%;
+    display: block;
+    font-size: 1.0625rem;
+  }
+
+  &__btn-text {
+    padding-left: 24px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0.8125rem;
+      height: 0.8125rem;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='4.83984' width='11.7566' height='1.81441' rx='0.907204' fill='black'/%3E%3Crect x='6.80615' width='11.4913' height='1.8563' rx='0.928152' transform='rotate(90 6.80615 0)' fill='black'/%3E%3C/svg%3E ");
+    }
+  }
+
+}

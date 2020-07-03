@@ -4,14 +4,13 @@
   &__text {}
 
   &__wrapper {
-    flex: 0 0 100%;
+    flex: 0 1 100%;
   }
 
   &__filter {
     width: 100%;
     justify-content: flex-end;
   }
-
 }
 
 .page__filter-item {

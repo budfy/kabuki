@@ -116,6 +116,8 @@
   &__icon {
     height: 2rem;
     display: block;
+    background-color: transparent;
+    border: none;
   }
 
   &__icon-pic {
@@ -125,7 +127,7 @@
 
   &__icon-pic,
   &__icon-pic path {
-    transition: all .3s;
+    transition: all .26s;
   }
 
   &__icon-cart {

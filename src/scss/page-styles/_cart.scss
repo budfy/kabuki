@@ -1,0 +1,313 @@
+.cart {
+  background-image: url(../images/cart-bg.jpg);
+  background-position: right bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 5rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+
+  &--empty {
+    & .cart__subtitle-empty {
+      display: block;
+    }
+  }
+
+  &__subtitle-empty {
+    font-weight: bold;
+    display: none;
+  }
+
+  &__offer {
+    max-width: 31.25rem;
+    margin-right: auto;
+    padding-left: 1.875rem;
+  }
+
+  &__offer-item {
+    position: relative;
+
+    &+& {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__offer-delete {
+    position: absolute;
+    top: 0.75rem;
+    left: -1.875rem;
+  }
+
+  &__offer-descr {
+    flex: 1 1 18.75rem;
+  }
+
+  &__offer-title {
+    font-weight: bold;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  &__offer-size {
+    padding: 0 0.5rem;
+    font-weight: 700;
+    flex: 0 0 4.5rem;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__offer-ingridients {
+    margin-top: 0.625rem;
+    max-width: 12.5rem;
+    margin: 0;
+    display: block;
+    font-size: 0.875rem;
+  }
+
+  &__offer-count {
+    align-items: flex-start;
+    position: relative;
+
+    &.product-item__ingridient-counter--no-count .cart__offer-count-input {
+      color: #000000;
+    }
+  }
+
+  &__offer-count-input {
+    color: #000000;
+    background-color: transparent;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin: 0 auto;
+  }
+
+  &__offer-minus::before,
+  &__offer-minus::after,
+  &__offer-plus::before,
+  &__offer-plus::after {
+    background-color: #000000;
+  }
+
+  &__offer-price {
+    flex: 0 0 4rem;
+    margin: 0 auto;
+    display: block;
+    text-align: right;
+  }
+
+  &__product-icon {
+    position: absolute;
+    height: 2.25rem;
+    width: 2.25rem;
+    bottom: 1rem;
+    border-radius: 2rem;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+
+    &:nth-of-type(2) {
+      margin-left: 0.875rem;
+    }
+
+    &:nth-of-type(3) {
+      margin-left: 1.75rem;
+    }
+
+    &:nth-of-type(4) {
+      margin-left: 2.625rem;
+      color: #C0C0C0;
+      font-size: 2.1875rem;
+      border: none;
+      margin-left: 4rem;
+      bottom: 1.25rem;
+    }
+  }
+
+  &__offer-persons {
+    margin-top: 1.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $main-red;
+    max-width: 25.5rem;
+  }
+
+  &__persons-text {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  &__persons-buttons.product-item__ingridient-counter--no-count .cart__offer-count-input {
+    color: #000000;
+    margin-bottom: auto;
+  }
+
+  &__offer-summ {
+    margin-top: 1.875rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  &__summ-number {
+    font-weight: 700;
+  }
+
+  &__offer-delivery {
+    margin-top: 2.5rem;
+  }
+
+  &__delivery-title {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__delivery-time {
+    margin-top: 1.25rem;
+  }
+
+  &__radio {
+    display: block;
+    position: relative;
+    margin-left: -2rem;
+
+    &--inline {
+      position: absolute;
+      top: 0.625rem;
+    }
+  }
+
+  &__radio-time+&__radio-time {
+    margin-top: 1rem;
+  }
+
+  &__radio-input {
+    opacity: 0;
+
+    &:checked+.cart__radio-descr {
+      &::before {
+        border: 1px solid $main-red;
+      }
+
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.87302 12.6016C3.75321 12.6635 3.61012 12.6715 3.4662 12.5276L0.18305 9.17492C-0.10727 8.8786 -0.039662 8.48828 0.296857 8.24527C0.72695 7.93464 1.302 7.42831 1.78727 6.68801C2.01453 6.34093 2.33938 6.31765 2.56403 6.66626L3.37387 7.92346C3.59886 8.27241 3.85769 8.70996 3.99663 8.66079C4.05299 8.6409 4.12135 8.59208 4.20284 8.49553L10.7847 0.222263C11.0431 -0.10224 11.4078 -0.0673655 11.5998 0.300368L13.4681 3.88406C13.66 4.25179 13.5534 4.76075 13.23 5.02068L4.77188 11.8177C4.44883 12.0776 4.09318 12.4885 3.87302 12.6016Z' fill='%23000000'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  &__radio-descr {
+    padding-left: 0.875rem;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+
+    &::before {
+      border: 1px solid #000000;
+    }
+
+    &::after {
+      background-position: center;
+      background-size: 0.875rem 0.875rem;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.87302 12.6016C3.75321 12.6635 3.61012 12.6715 3.4662 12.5276L0.18305 9.17492C-0.10727 8.8786 -0.039662 8.48828 0.296857 8.24527C0.72695 7.93464 1.302 7.42831 1.78727 6.68801C2.01453 6.34093 2.33938 6.31765 2.56403 6.66626L3.37387 7.92346C3.59886 8.27241 3.85769 8.70996 3.99663 8.66079C4.05299 8.6409 4.12135 8.59208 4.20284 8.49553L10.7847 0.222263C11.0431 -0.10224 11.4078 -0.0673655 11.5998 0.300368L13.4681 3.88406C13.66 4.25179 13.5534 4.76075 13.23 5.02068L4.77188 11.8177C4.44883 12.0776 4.09318 12.4885 3.87302 12.6016Z' fill='%23c2c2c2'/%3E%3C/svg%3E%0A");
+      transition: all .26s;
+    }
+  }
+
+  &__descr-sub {
+    font-size: 0.75rem;
+    color: $dark-grey;
+  }
+
+  &__text-input {
+    font-size: 1.0625rem;
+    line-height: 1.4375rem;
+  }
+
+  &__schedule-wrapper {
+    display: none;
+    margin-top: 10px;
+  }
+
+  &__delivery-schedule {
+    justify-content: flex-start;
+  }
+
+  &__delivery-time-select {
+    flex: 0 0 7rem;
+
+    &+& {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__delivery-phone {
+    display: block;
+    max-width: 30%;
+  }
+
+  &__phone-descr {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #8D8D8D;
+  }
+
+  &__offer-comment {
+    margin-top: 1.25rem;
+  }
+
+  &__comment-title {
+    margin: 0;
+  }
+
+  &__comment-field {
+    width: 100%;
+    display: block;
+    border: 1px solid #a9a9a9;
+    resize: vertical;
+    margin-top: 0.75rem;
+    background-color: #ffffff80;
+    transition: all 0.26s;
+
+    &:focus {
+      background-color: #ffffff;
+      outline-color: transparent;
+    }
+  }
+
+  &__delivery-type {
+    margin-top: 1.25rem;
+  }
+
+  &__address-item {
+    position: relative;
+  }
+
+  &__address-input-wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__label {
+    flex: 0 0 100%;
+    display: block;
+
+    &--s {
+      flex: 0 0 49%;
+    }
+  }
+
+  &__offer-submit {
+    margin-top: 1.25rem;
+    flex: 0 1 auto;
+    margin-right: auto;
+  }
+}

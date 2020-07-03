@@ -6,6 +6,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "gulp-webpcss": "^1.1.1",
+    "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
     "mixitup": "^3.3.1",
