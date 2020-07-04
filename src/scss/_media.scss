@@ -30,6 +30,10 @@
   .promotions__slide-title {
     font-size: 7rem;
   }
+
+  .pagination {
+    padding: 4rem 0 2rem;
+  }
 }
 
 //!MEDIA
@@ -173,12 +177,24 @@
     margin: 0 0 0 auto;
   }
 
+  .product-item__button {
+    height: 3rem;
+    width: 3rem;
+  }
+
   .cart__product-icon {
-    bottom: -2rem;
+    bottom: -3rem;
 
     &:nth-of-type(4) {
-      bottom: -2rem;
+      bottom: -3rem;
     }
+  }
+
+  .cart__offer-count-input {
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 4rem;
+    margin-top: 0.5rem;
   }
 }
 
