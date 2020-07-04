@@ -180,6 +180,10 @@
   .product-item__button {
     height: 3rem;
     width: 3rem;
+
+    &.product-item__ingridients-switcher {
+      width: 100%;
+    }
   }
 
   .cart__product-icon {
@@ -195,6 +199,11 @@
     line-height: 1;
     width: 4rem;
     margin-top: 0.5rem;
+  }
+
+  .slick-dots,
+  .slick-arrow {
+    display: none;
   }
 }
 

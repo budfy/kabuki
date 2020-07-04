@@ -22,7 +22,14 @@ $(function () {
       '</button>',
     nextArrow: '<button type="button" class="slick-next">' +
       '<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <path opacity = "0.8" d = "M15 6.76795C16.3333 7.53775 16.3333 9.46225 15 10.2321L3.75 16.7272C2.41667 17.497 0.749999 16.5348 0.749999 14.9952L0.75 2.00481C0.75 0.46521 2.41667 -0.497043 3.75 0.272758L15 6.76795Z" fill = "black" fill-opacity = "0.3"/></svg>' +
-      '</button>'
+      '</button>',
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        dots: false,
+        arrows: false,
+      },
+    }],
   });
 
 
@@ -51,7 +58,17 @@ $(function () {
         centerMode: true,
         centerPadding: 20,
         variableWidth: true
-      }
+      },
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: 20,
+        variableWidth: true,
+        dots: false,
+        arrows: false,
+      },
     }]
   });
 
