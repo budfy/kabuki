@@ -5,10 +5,10 @@
 //STYLES-SECTION: BEM-blocks styles
 @import 'ui-styles/_main-link';
 @import 'ui-styles/_section-title';
-@import 'ui-styles/_product-item';
 @import 'ui-styles/_pagination';
 @import 'ui-styles/_buttons';
 @import 'ui-styles/_form-input';
+@import 'ui-styles/_burger';
 //!STYLES-SECTION
 //!STYLES-SECTION
 
@@ -21,6 +21,7 @@
 @import 'block-styles/_new';
 @import 'block-styles/_footer';
 @import 'block-styles/_modal';
+@import 'block-styles/_product-item';
 
 @import 'page-styles/_menu';
 @import 'page-styles/_contacts';
@@ -28,3 +29,4 @@
 @import 'page-styles/_cabinet';
 @import 'page-styles/_cart';
 //!STYLES-SECTION
+@import 'media'

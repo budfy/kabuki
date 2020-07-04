@@ -9,6 +9,66 @@
 
   &__inner {
     align-items: center;
+
+    &--black {
+      display: none;
+      padding: 1.875rem 2.5rem 1.5rem;
+      align-items: center;
+      background-color: #000000;
+      position: relative;
+
+      & .header__work-hours {
+        color: #ffffff;
+        margin-left: 1.25rem;
+        padding: 0;
+      }
+
+      & .header__nav {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #dadadabb;
+        padding: 1rem;
+        width: 100%;
+        margin: 0;
+        transition: all 0.26s;
+        z-index: -1;
+
+        &--open {
+          bottom: -3.4rem;
+
+        }
+
+        .header__nav-list {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .header__nav-item:nth-child(2) {
+          margin-right: auto;
+        }
+
+        .header__nav-link {
+          color: #000000;
+        }
+
+      }
+
+      .header__icon-pic,
+      .header__icon-pic path {
+        fill: #ffffff;
+
+      }
+
+      .header__icon-cart {
+        margin-left: 0.5rem;
+
+        &.--full .header__icon-pic path:nth-child(n+6) {
+          fill: #ffffff;
+        }
+      }
+    }
   }
 
   &__logo {
@@ -66,16 +126,20 @@
     margin: 0 1.875rem;
     position: relative;
 
-    &.--current .header__nav-link &::before {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 0.3125rem;
-      border-top: 1px solid $main-red;
-      border-bottom: 1px solid $main-red;
-      transition: all .3s;
+    &.--current .header__nav-link {
+      color: $main-red;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0.3125rem;
+        border-top: 1px solid $main-red;
+        border-bottom: 1px solid $main-red;
+        transition: all .3s;
+      }
     }
   }
 
@@ -128,6 +192,18 @@
   &__icon-pic,
   &__icon-pic path {
     transition: all .26s;
+  }
+
+  &__icon-user {
+    display: none;
+
+    &--logined {
+      display: block;
+    }
+
+    &--unlogined {
+      display: block;
+    }
   }
 
   &__icon-cart {

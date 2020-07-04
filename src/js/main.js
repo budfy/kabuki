@@ -43,7 +43,16 @@ $(function () {
       '</button>',
     nextArrow: '<button type="button" class="slick-next">' +
       '<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <path opacity = "0.8" d = "M15 6.76795C16.3333 7.53775 16.3333 9.46225 15 10.2321L3.75 16.7272C2.41667 17.497 0.749999 16.5348 0.749999 14.9952L0.75 2.00481C0.75 0.46521 2.41667 -0.497043 3.75 0.272758L15 6.76795Z" fill = "black" fill-opacity = "0.3"/></svg>' +
-      '</button>'
+      '</button>',
+    responsive: [{
+      breakpoint: 940,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: 20,
+        variableWidth: true
+      }
+    }]
   });
 
 
@@ -422,6 +431,59 @@ $(function () {
       $(this).parent().siblings(".cart__address-input-wrapper").find(".cart__input").attr("disabled", false);
       $(this).parents(".cart__address-item").siblings().find(".cart__input").attr("disabled", true);
     }
-  })
+  });
 
+
+
+  //NOTE - burger click functions
+  $(".header__burger").click(function () {
+    $(this).toggleClass("burger--open");
+    $(".header__nav").toggleClass("header__nav--open");
+  });
+
+
+  //NOTE - menu relocate
+  $(window).on("load resize orientationchange", function () {
+    if ($(window).width() < 1080) {
+
+      $(".header__work-hours, .header__nav, .header__icons")
+        .detach()
+        .appendTo($(".header__inner--black"));
+
+    } else {
+      $(".header__work-hours, .header__nav")
+        .detach()
+        .insertAfter(".header__logo")
+        .removeClass("--black");
+      $(".header__icons")
+        .detach()
+        .insertAfter(".header__phones-list");
+    }
+  });
+
+
+  //NOTE - filter relocate
+  $(window).on("load resize orientationchange", function () {
+    if ($(window).width() < 940) {
+
+      $(".page-title__filter")
+        .detach()
+        .insertAfter(".page-title");
+
+    } else {
+      $(".page-title__filter")
+        .detach()
+        .appendTo(".page-title__wrapper");
+    }
+  });
+
+  //NOTE - filter open/close
+  $(".page-title__filter-btn").click(function () {
+    $(".page-title__filter").slideToggle(260);
+  });
+
+  //NOTE - product item ingridients toggle
+  $('.product-item__ingridients-btn').click(function () {
+    $(this).parent().toggleClass("--open");
+  });
 });

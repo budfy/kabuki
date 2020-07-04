@@ -1,36 +1,61 @@
 <header class="header">
   <div class="container">
-    <div class="header__inner flex"><a href="index.html" class="header__logo"><img src="../images/kabuki-logo.png"
-          class="header__logo-img" alt="Kabuki - логотип"></a>
+    <div class="header__inner flex">
+
+      <a href="index.html" class="header__logo">
+        <img src="../images/kabuki-logo.png" class="header__logo-img" alt="Kabuki - логотип">
+      </a>
+
       <div class="header__work-hours"><span class="header__working-time">c 11:00 до 21:30</span>
         <div class="header__working-days flex">
-          <div class="header__working-day-item flex --center"><span class="header__working-day-text">Пн </span></div>
-          <div class="header__working-day-item flex --center"><span class="header__working-day-text">Вт </span></div>
-          <div class="header__working-day-item flex --center"><span class="header__working-day-text">Ср </span></div>
-          <div class="header__working-day-item flex --center"><span class="header__working-day-text">Чт </span></div>
-          <div class="header__working-day-item flex --center --current"><span class="header__working-day-text">Пт
-            </span></div>
-          <div class="header__working-day-item flex --center"><span class="header__working-day-text">Сб </span></div>
-          <div class="header__working-day-item flex --center"><span class="header__working-day-text">Вс </span></div>
+          <div class="header__working-day-item flex --center">
+            <span class="header__working-day-text">Пн </span>
+          </div>
+          <div class="header__working-day-item flex --center">
+            <span class="header__working-day-text">Вт </span>
+          </div>
+          <div class="header__working-day-item flex --center">
+            <span class="header__working-day-text">Ср </span>
+          </div>
+          <div class="header__working-day-item flex --center">
+            <span class="header__working-day-text">Чт </span>
+          </div>
+          <div class="header__working-day-item flex --center --current">
+            <span class="header__working-day-text">Пт
+            </span>
+          </div>
+          <div class="header__working-day-item flex --center">
+            <span class="header__working-day-text">Сб </span>
+          </div>
+          <div class="header__working-day-item flex --center">
+            <span class="header__working-day-text">Вс </span>
+          </div>
         </div>
       </div>
+
       <nav class="nav header__nav">
         <ul class="nav-list header__nav-list flex">
-          <li class="nav-item header__nav-item --current flex"><a href="menu.html"
-              class="nav-item__link header__nav-link main-link">Меню</a></li>
-          <li class="nav-item header__nav-item flex"><a href="promotions.html"
-              class="nav-item__link header__nav-link main-link">Акции</a></li>
-          <li class="nav-item header__nav-item flex"><a href="contacts.html"
-              class="nav-item__link header__nav-link main-link">Контакты</a></li>
+          <li class="nav-item header__nav-item --current flex">
+            <a href="menu.html" class="nav-item__link header__nav-link main-link">Меню</a>
+          </li>
+          <li class="nav-item header__nav-item flex">
+            <a href="promotions.html" class="nav-item__link header__nav-link main-link">Акции</a>
+          </li>
+          <li class="nav-item header__nav-item flex">
+            <a href="contacts.html" class="nav-item__link header__nav-link main-link">Контакты</a>
+          </li>
         </ul>
       </nav>
+
       <ul class="phones header__phones-list flex">
         <li class="phones__item"><a href="tel:+79044552202" class="phones__link main-link">+7 (904) 455-22-02</a></li>
         <li class="phones__item"><a href="tel:+73493662202" class="phones__link main-link">+7 (349) 366-22-02</a></li>
       </ul>
+
       <div class="header__icons flex">
 
-        <a href="cabinet.html" class="header__icon header__icon-user modal-call" data-modal="#modal-login">
+        <a href="cabinet.html" class="header__icon header__icon-user header__icon-user--logined"
+          data-modal="#modal-login">
           <svg class="icon-svg header__icon-pic" width="25" height="26" viewBox="0 0 25 26" fill=""
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -42,7 +67,8 @@
           </svg>
         </a>
 
-        <button class="header__icon header__icon-user modal-call" data-modal="#modal-login">
+        <button class="header__icon header__icon-user header__icon-user--unlogined modal-call"
+          data-modal="#modal-login">
           <svg class="icon-svg header__icon-pic" width="25" height="26" viewBox="0 0 25 26" fill=""
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -74,5 +100,12 @@
 
       </div>
     </div>
+  </div>
+  <div class="header__inner--black flex">
+    <button type="button" class="header__burger burger flex --col">
+      <span class="burger__item"></span>
+      <span class="burger__item"></span>
+      <span class="burger__item"></span>
+    </button>
   </div>
 </header>

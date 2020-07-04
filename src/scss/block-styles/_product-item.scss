@@ -28,7 +28,7 @@
 
   &__ingridients {
     position: absolute;
-    left: -100%;
+    left: -50%;
     width: 50%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8);
@@ -45,6 +45,29 @@
   &__ingridients-text {
     font-size: 0.625rem;
     margin-top: auto;
+  }
+
+  &__ingridients-btn {
+    position: absolute;
+    font-size: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    background-color: #DDDDDDaa;
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: 1.25rem;
+    border: none;
+    display: none;
+    transition: all 0.26s;
+
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  &__ingridients-icon {
+    fill: #000000;
   }
 
   &__labels {
