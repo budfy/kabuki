@@ -17,7 +17,7 @@ let gulp = require("gulp"),
 	pngquant = require("imagemin-pngquant"),
 	webp = require('gulp-webp'),
 	webphtml = require('gulp-webp-html'), //fixme: fix webp
-	//webpcss = require("gulp-webpcss"), //todo: fix webp
+	webpcss = require("gulp-webpcss"), //todo: fix webp
 	uglify = require("gulp-uglify"), //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
@@ -79,7 +79,7 @@ gulp.task("scss", function () {
 				},
 			}),
 		)
-		//.pipe(webpcss())
+		// .pipe(webpcss())
 		.pipe(sourcemaps.write("sourcemaps/")) //записываем карту в итоговый файл
 		.pipe(gulp.dest("build/css")) //кладём итоговый файл в директорию build/css
 		.pipe(
@@ -170,7 +170,7 @@ gulp.task("html", function () {
 				basepath: "@file",
 			}),
 		)
-		//.pipe(webphtml())
+		// .pipe(webphtml())
 		.pipe(sourcemaps.write("sourcemaps/"))
 		.pipe(gulp.dest("build/"))
 		.pipe(size())

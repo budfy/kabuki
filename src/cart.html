@@ -12,7 +12,7 @@
         <div class="container">
           <h2 class="page-title section-title">Корзина</h2>
           <p class="cart__subtitle-empty">Ваша корзина пуста</p>
-          <form action="" class="cart__offer flex --col">
+          <form action="" class="cart__offer flex --col" id="offer-form">
 
             <!-- SECTION - products offer -->
             <div class="cart__offer-products">
@@ -128,16 +128,16 @@
                   </label>
                   <div class="cart__address-input-wrapper flex">
                     <label for="cart__build" class="cart__label">
-                      <input type="text" class="cart__input form-input cart__input--build" name="Здание"
+                      <input type="text" class="cart__input form-input cart__input--build js-input--build" name="Здание"
                         id="cart__build" placeholder="мкр __, дом/здание ___, кв/офис ___">
                     </label>
                     <label for="cart__set" class="cart__label cart__label--s">
-                      <input type="text" class="cart__input form-input cart__input--set" name="Подъезд" id="cart__set"
-                        placeholder="подъезд _">
+                      <input type="text" class="cart__input form-input cart__input--set js-input--set" name="Подъезд"
+                        id="cart__set" placeholder="подъезд _">
                     </label>
                     <label for="cart__floor" class="cart__label cart__label--s">
-                      <input type="text" class="cart__input form-input cart__input--floor" name="Этаж" id="cart__floor"
-                        placeholder="этаж _">
+                      <input type="text" class="cart__input form-input cart__input--floor js-input--floor" name="Этаж"
+                        id="cart__floor" placeholder="этаж _">
                     </label>
                   </div>
                 </div>
@@ -190,7 +190,9 @@
 
               </div>
             </div>
-            <buttun type="submit" class="cart__offer-submit btn btn--red btn--l">Оплатить заказ</buttun>
+            <button class="cart__offer-submit btn btn--red btn--l modal-call" type="button" data-modal="#modal-pay">
+              Оплатить заказ
+            </button>
           </form>
         </div>
         <!-- STOP WRITE CODE -->

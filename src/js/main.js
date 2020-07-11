@@ -224,6 +224,55 @@ $(function () {
     $("body").removeClass("no-scroll");
   });
 
+  $(".js-reset").click(function () {
+    $(this).parents(".modal__wrapper").fadeOut(260);
+    setTimeout(() => {
+      $("#modal-login").fadeIn(260);
+    }, 300);
+  });
+
+
+
+  //NOTE - close/open modals
+
+  $(".modal__btn[data-modal]").click(function () {
+    let modal = $(this).data("modal");
+    $(this).parents(".modal__wrapper").fadeOut(260);
+    setTimeout(() => {
+      $(modal).fadeIn(260);
+    }, 300);
+  });
+
+
+
+  //NOTE - forms ajax submit
+  $("#offer-form").submit(function () {
+    let order_data = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "",
+      data: order_data,
+      success: function () {
+        window.location.replace($(this).data("pay"));
+      },
+      error: function () {
+        // alert("Что-то пошло не так.", "Повторите отправку заказа.");
+        let time = 10;
+        $("#modal-pay").fadeOut();
+        setTimeout(() => {
+          $("#modal-alert").fadeIn(260);
+        }, 300);
+        // setInterval(function () {
+        //   $(".modal__timer").text(time);
+        //   time--;
+        // }, 1000);
+        setTimeout(() => {
+          $("#modal-alert").fadeOut(260);
+        }, 10000);
+      }
+    });
+  });
+
 
 
   //NOTE - fake placeholder
@@ -245,98 +294,102 @@ $(function () {
 
 
 
-  //NOTE - close/open modals
-
-  $(".modal__btn[data-modal]").click(function () {
-    let modal = $(this).data("modal");
-    $(this).parents(".modal__wrapper").fadeOut(260);
-    setTimeout(() => {
-      $(modal).fadeIn(260);
-    }, 300);
-  });
-
-
-
   //NOTE - forms mask
 
-  $("[type='text']").inputmask({
-    mask: "*{3,30}",
-    greedy: false,
-    onincomplete: function () {
-      $(this).parent().addClass("invalid");
-      setTimeout(() => {
-        $(this).parent().removeClass("invalid");
-      }, 3000);
-    },
-  });
+  maskinit();
 
-  $("[type='tel']").inputmask({
-    mask: "+7" + " " + "(" + "9999" + ")" + " " + "999" + "-" + "99" + "-" + "99",
-    greedy: false,
-    onincomplete: function () {
-      $(this).parent().addClass("invalid");
-      setTimeout(() => {
-        $(this).parent().removeClass("invalid");
-      }, 3000);
-    },
-    validator: "[0-9]",
-  });
+  function maskinit() {
 
-  $(".cabinet__input--build").inputmask({
-    mask: "мкр. " + "*{3,30}" + " " + "дом/здание " + "999" + " кв/офис " + "999",
-    greedy: false,
-    onincomplete: function () {
-      $(this).parent().addClass("invalid");
-      setTimeout(() => {
-        $(this).parent().removeClass("invalid");
-      }, 3000);
-    },
-  });
-
-  $(".cabinet__input--set").inputmask({
-    mask: "подъезд " + "999",
-    greedy: false,
-    onincomplete: function () {
-      $(this).parent().addClass("invalid");
-      setTimeout(() => {
-        $(this).parent().removeClass("invalid");
-      }, 3000);
-    },
-  });
-
-  $(".cabinet__input--floor").inputmask({
-    mask: "этаж " + "999",
-    greedy: false,
-    onincomplete: function () {
-      $(this).parent().addClass("invalid");
-      setTimeout(() => {
-        $(this).parent().removeClass("invalid");
-      }, 3000);
-    },
-  });
-
-  $(".form-input--email").inputmask({
-    mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}.*{2,6}[.*{1,2}]",
-    greedy: false,
-    onBeforePaste: function (pastedValue, opts) {
-      pastedValue = pastedValue.toLowerCase();
-      return pastedValue.replace("mailto:", "");
-    },
-    definitions: {
-      "*": {
-        validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~-]",
-        cardinality: 1,
-        casing: "lower",
-      },
+    $("[type='text']").inputmask({
+      mask: "*{3,30}",
+      greedy: false,
       onincomplete: function () {
         $(this).parent().addClass("invalid");
         setTimeout(() => {
           $(this).parent().removeClass("invalid");
         }, 3000);
       },
-    },
-  });
+    });
 
+    $("[type='tel']").inputmask({
+      mask: "+7" + " " + "(" + "999" + ")" + " " + "999" + "-" + "99" + "-" + "99",
+      greedy: false,
+      onincomplete: function () {
+        $(this).parent().addClass("invalid");
+        setTimeout(() => {
+          $(this).parent().removeClass("invalid");
+        }, 3000);
+      },
+      validator: "[0-9]",
+    });
+
+    $(".cabinet__input--build, .cart__input--build").inputmask({
+      mask: "мкр. " + "99" + " " + "дом/здание " + "999" + " кв/офис " + "999",
+      greedy: false,
+      onincomplete: function () {
+        $(this).parent().addClass("invalid");
+        setTimeout(() => {
+          $(this).parent().removeClass("invalid");
+        }, 3000);
+      },
+      oncomplete: function () {
+        $(this).parent().siblings().find(".js-input--set").focus();
+      }
+    });
+
+    $(".cabinet__input--set, .cart__input--set").inputmask({
+      mask: "подъезд " + "99",
+      greedy: false,
+      onincomplete: function () {
+        $(this).parent().addClass("invalid");
+        setTimeout(() => {
+          $(this).parent().removeClass("invalid");
+        }, 3000);
+      },
+      oncomplete: function () {
+        $(this).parent().siblings().find(".js-input--floor").focus();
+      },
+      oncleared: function () {
+        $(this).parent().siblings().find(".js-input--build").focus();
+      }
+    });
+
+    $(".cabinet__input--floor, .cart__input--floor").inputmask({
+      mask: "этаж " + "9",
+      greedy: false,
+      onincomplete: function () {
+        $(this).parent().addClass("invalid");
+        setTimeout(() => {
+          $(this).parent().removeClass("invalid");
+        }, 3000);
+      },
+      oncleared: function () {
+        $(this).parent().siblings().find(".js-input--set").focus();
+      }
+    });
+
+    $(".form-input--email").inputmask({
+      mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}.*{2,6}[.*{1,2}]",
+      greedy: false,
+      onBeforePaste: function (pastedValue, opts) {
+        pastedValue = pastedValue.toLowerCase();
+        return pastedValue.replace("mailto:", "");
+      },
+      definitions: {
+        "*": {
+          validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~-]",
+          cardinality: 1,
+          casing: "lower",
+        },
+        onincomplete: function () {
+          $(this).parent().addClass("invalid");
+          setTimeout(() => {
+            $(this).parent().removeClass("invalid");
+          }, 3000);
+        },
+      },
+    });
+  }
 
 
   //NOTE - address add/remove
@@ -346,8 +399,14 @@ $(function () {
     function () {
       if (address_id <= 2) {
         address_id++;
-        $('#address-item-1').clone().attr('id', 'address-item-' + address_id).insertBefore($(this));
-        $('#address-item-' + address_id).append('<button type="button" class="cabinet__address-remove remove-btn"></button>')
+        $('#address-item-1')
+          .clone()
+          .attr('id', 'address-item-' + address_id)
+          .insertBefore($(this));
+        $('#address-item-' + address_id).append('<button type="button" class="cabinet__address-remove remove-btn"></button>');
+        maskinit();
+        $('#address-item-' + address_id).find('input').val('');
+        console.log("address_id", address_id)
       }
     }
   );
@@ -393,7 +452,7 @@ $(function () {
 
     if (parseInt($(this).val()) == 1) {
       $(this).siblings(".cart__product-icon--1").show();
-      $(this).siblings(".cart__product-icon--2, .cart__product-icon--3, .cart__product-icon--4").hide()
+      $(this).siblings(".cart__product-icon--2, .cart__product-icon--3, .cart__product-icon--4").hide();
     }
 
     if (parseInt($(this).val()) == 2) {
@@ -459,6 +518,7 @@ $(function () {
   });
 
 
+
   //NOTE - menu relocate
   $(window).on("load resize orientationchange", function () {
     if ($(window).width() < 1080) {
@@ -479,6 +539,7 @@ $(function () {
   });
 
 
+
   //NOTE - filter relocate
   $(window).on("load resize orientationchange", function () {
     if ($(window).width() < 940) {
@@ -494,13 +555,28 @@ $(function () {
     }
   });
 
+
+
   //NOTE - filter open/close
   $(".page-title__filter-btn").click(function () {
     $(".page-title__filter").slideToggle(260);
   });
 
+
+
   //NOTE - product item ingridients toggle
   $('.product-item__ingridients-btn').click(function () {
     $(this).parent().toggleClass("--open");
+  });
+
+
+
+  //NOTE - password visible button
+  $(".form__password-btn").on("mousedown", function () {
+    $(this).siblings('input').attr('type', "text");
+  });
+
+  $(".form__password-btn").on("mouseup", function () {
+    $(this).siblings('input').attr('type', "password");
   });
 });

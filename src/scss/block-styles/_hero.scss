@@ -9,9 +9,17 @@
       right: 0;
       margin: 0 auto;
     }
+
+    .slick-prev {
+      left: 1.5rem;
+    }
+
+    .slick-next {
+      right: 1.5rem;
+    }
   }
 
-  &__slide .container {
+  &__slide &__slide-wrapper {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

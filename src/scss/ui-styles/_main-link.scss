@@ -4,10 +4,6 @@
   transition: all .3s;
   color: black;
 
-  &:visited {
-    color: $dark-grey;
-  }
-
   &:hover {
     color: $main-red;
   }

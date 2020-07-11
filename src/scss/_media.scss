@@ -7,6 +7,18 @@
   .categories-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .header__nav-item {
+    margin: 0 1.5rem;
+  }
+
+  .header__icons {
+    margin-left: 2rem;
+  }
+
+  .header__icon-cart {
+    margin-left: 2rem;
+  }
 }
 
 //!MEDIA

@@ -94,8 +94,9 @@
           </svg>
         </button>
 
-        <a href="cart.html" class="header__icon header__icon-cart --full"><svg class="header__icon-pic" width="32"
-            height="32" viewBox="0 0 32 32" fill="" xmlns="http://www.w3.org/2000/svg">
+        <a href="cart.html" class="header__icon header__icon-cart --full">
+          <svg class="header__icon-pic" width="32" height="32" viewBox="0 0 32 32" fill=""
+            xmlns="http://www.w3.org/2000/svg">
             <path d="M28.835 22H9.24L4.24 4H1V2H5.76L10.76 20H27.165L28.802 11H13.045V9H31.198L28.835 22Z" fill="" />
             <path
               d="M12 30C10.346 30 9 28.654 9 27C9 25.346 10.346 24 12 24C13.654 24 15 25.346 15 27C15 28.654 13.654 30 12 30ZM12 26C11.448 26 11 26.448 11 27C11 27.552 11.448 28 12 28C12.552 28 13 27.552 13 27C13 26.448 12.552 26 12 26Z"
@@ -108,7 +109,7 @@
             <path d="M15 6.99976H13V4.27876L19.684 2.05176L20.316 3.94776L15 5.72076V6.99976Z" fill="" />
             <path d="M29 6.99975H27V4.78075L21 3.28075V6.99975H19V0.71875L29 3.21875V6.99975Z" fill="" /></svg>
           <span class="header__icon-counter flex --center">
-            <span class="header__counter-text">0</span>
+            <span class="header__counter-text">12</span>
           </span>
         </a>
 
@@ -168,15 +169,15 @@
               <h3 class="cabinet__form-title form-title">Адрес</h3>
               <div class="cabinet__address-item flex" id="address-item-1">
                 <label for="cabinet__build" class="cabinet__label">
-                  <input type="text" class="cabinet__input form-input cabinet__input--build" name="Здание"
-                    id="cabinet__build" placeholder="мкр __, дом/здание ___, кв/офис ___">
+                  <input type="text" class="cabinet__input form-input cabinet__input--build js-input--build"
+                    name="Здание" id="cabinet__build" placeholder="мкр __, дом/здание ___, кв/офис ___">
                 </label>
                 <label for="cabinet__set" class="cabinet__label cabinet__label--s">
-                  <input type="text" class="cabinet__input form-input cabinet__input--set" name="Подъезд"
+                  <input type="text" class="cabinet__input form-input cabinet__input--set js-input--set" name="Подъезд"
                     id="cabinet__set" placeholder="подъезд _">
                 </label>
                 <label for="cabinet__floor" class="cabinet__label cabinet__label--s">
-                  <input type="text" class="cabinet__input form-input cabinet__input--floor" name="Этаж"
+                  <input type="text" class="cabinet__input form-input cabinet__input--floor js-input--floor" name="Этаж"
                     id="cabinet__floor" placeholder="этаж _">
                 </label>
               </div>
@@ -266,6 +267,7 @@
       <label for="modal-login__pass" class="modal__form-label">
         <input type="password" class="modal__form-input form-input" id="modal-login__pass" required placeholder="Пароль"
           name="Пароль">
+        <button class="form__password-btn" type="button"></button>
       </label>
       <div class="modal__btn-box flex">
         <button class="modal__btn btn btn--red  btn--s" type="submit">Войти</button>
@@ -301,6 +303,7 @@
       <label for="modal-reg__password" class="modal__form-label">
         <input type="password" class="modal__form-input form-input" required placeholder="Пароль" name="Пароль"
           id="modal-reg__password">
+        <button class="form__password-btn" type="button"></button>
       </label>
       <label for="modal-reg__pers" class="modal__form-label modal__form-label--check flex">
         <input class="modal__form-check" type="checkbox" name="Согласие на обработку персональных данных"
@@ -309,7 +312,7 @@
       </label>
       <div class="modal__btn-box flex">
         <button class="modal__btn btn btn--red btn--l" type="submit">Зарегистрироваться</button>
-        <button class="modal__btn btn btn--transparent btn--s" type="reset">Отмена</button>
+        <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
       </div>
     </form>
   </div>
@@ -327,9 +330,34 @@
       </p>
       <div class="modal__btn-box flex">
         <button class="modal__btn btn btn--red btn--l" type="submit">Отправить</button>
-        <button class="modal__btn btn btn--transparent btn--s" type="reset">Отмена</button>
+        <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
       </div>
     </form>
+  </div>
+
+  <div class="modal__wrapper" id="modal-pay">
+    <button class="modal__close">Закрыть</button>
+    <p class="modal__title">Оплата</p>
+
+    <input type="submit" class="btn btn--red btn--l modal-pay__btn" form="offer-form" value="Онлайн"
+      data-pay="https://kassa.yandex.ru/">
+    <label for="modal__reset-email" class="modal__form-label">
+      <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail*"
+        name="e-mail" id="modal__reset-email">
+    </label>
+    <p class="modal____form-descr">
+      *На Вашу почту придет письмо с инструкцией
+    </p>
+    <div class="modal__btn-box flex">
+      <button class="modal__btn btn btn--red btn--l" type="submit">Отправить</button>
+      <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
+    </div>
+  </div>
+
+  <div class="modal__wrapper" id="modal-alert">
+    <button class="modal__close">Закрыть</button>
+    <p class="modal__title">Что-то пошло не так.</p>
+    <p class="modal__title">Повторите отправку заказа через <span class="modal__timer"></span> секунд.</p>
   </div>
 </div>
   <script async src="js/webp.min.js"></script>
