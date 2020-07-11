@@ -121,10 +121,11 @@
   &__nav-list {
     justify-content: center;
     height: 100%;
+    margin: 0;
   }
 
   &__nav-item {
-    margin: 0 1.875rem;
+    margin: 0 2.25rem;
     position: relative;
 
     &.--current .header__nav-link {

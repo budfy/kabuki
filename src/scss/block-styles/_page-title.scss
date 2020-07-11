@@ -11,6 +11,8 @@
   &__filter {
     width: 100%;
     justify-content: flex-end;
+    margin: 0;
+    list-style: none;
   }
 
   &__filter-btn {
