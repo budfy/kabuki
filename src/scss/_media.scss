@@ -44,7 +44,7 @@
   }
 
   .pagination {
-    padding: 4rem 0 2rem;
+    padding: 1.5rem 0;
   }
 }
 
@@ -176,7 +176,7 @@
 
   .cart__offer-descr {
     flex: 0 0 74%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   .cart__offer-size {
@@ -199,17 +199,16 @@
   }
 
   .cart__product-icon {
-    bottom: -3rem;
+    bottom: -1.5rem;
 
     &:nth-of-type(4) {
-      bottom: -3rem;
+      bottom: -1.5rem;
     }
   }
 
   .cart__offer-count-input {
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1;
-    width: 4rem;
     margin-top: 0.5rem;
   }
 
@@ -256,6 +255,11 @@
   .contacts__map-wrapper {
     margin-left: 0;
     flex: 0 0 auto;
+  }
+
+  .product-item__button::after,
+  .product-item__button::before {
+    height: 1rem;
   }
 }
 

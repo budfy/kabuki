@@ -270,7 +270,7 @@
         <button class="form__password-btn" type="button"></button>
       </label>
       <div class="modal__btn-box flex">
-        <button class="modal__btn btn btn--red  btn--s" type="submit">Войти</button>
+        <button class="modal__btn btn btn--red  btn--s" type="submit" disabled>Войти</button>
         <button class="modal__btn btn btn--transparent btn--l" data-modal="#modal-registration"
           type="button">Зарегистрироваться</button>
         <button class="modal__btn modal__pass-reset" type="button" data-modal="#modal-password">Восстановить
@@ -311,7 +311,7 @@
         <span class="modal__check-descr">Согласен на обработку персональных данных</span>
       </label>
       <div class="modal__btn-box flex">
-        <button class="modal__btn btn btn--red btn--l" type="submit">Зарегистрироваться</button>
+        <button class="modal__btn btn btn--red btn--l" type="submit" disabled>Зарегистрироваться</button>
         <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
       </div>
     </form>
@@ -325,33 +325,46 @@
         <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail*"
           name="e-mail" id="modal__reset-email">
       </label>
-      <p class="modal____form-descr">
+      <p class="modal__form-descr">
         *На Вашу почту придет письмо с инструкцией
       </p>
       <div class="modal__btn-box flex">
-        <button class="modal__btn btn btn--red btn--l" type="submit">Отправить</button>
+        <button class="modal__btn btn btn--red btn--l" type="submit" disabled>Отправить</button>
         <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
       </div>
     </form>
   </div>
 
-  <div class="modal__wrapper" id="modal-pay">
+  <div class="modal__wrapper modal__pay" id="modal-pay">
     <button class="modal__close">Закрыть</button>
     <p class="modal__title">Оплата</p>
 
-    <input type="submit" class="btn btn--red btn--l modal-pay__btn" form="offer-form" value="Онлайн"
-      data-pay="https://kassa.yandex.ru/">
-    <label for="modal__reset-email" class="modal__form-label">
-      <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail*"
-        name="e-mail" id="modal__reset-email">
-    </label>
-    <p class="modal____form-descr">
-      *На Вашу почту придет письмо с инструкцией
-    </p>
-    <div class="modal__btn-box flex">
-      <button class="modal__btn btn btn--red btn--l" type="submit">Отправить</button>
-      <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
+    <button type="submit" class="btn btn--red btn--l modal__pay-btn modal-pay-online__btn"
+      form="offer-form">Онлайн</button>
+
+    <p class="modal__title modal__title--sub">При получении:</p>
+
+    <div class="modal__radio-wrapper">
+      <label for="pay-type-card" class="cart__radio modal__radio">
+        <input type="radio" class="cart__radio-input modal__radio pay-type-radio" id="pay-type-card"
+          name="Выбор типа оплаты" form="offer-form">
+        <span class="cart__deliverry-type-descr cart__radio-descr">
+          Оплата картой
+        </span>
+      </label>
+      <label for="pay-type-cash" class="cart__radio modal__radio">
+        <input type="radio" class="cart__radio-input modal__radio pay-type-radio" id="pay-type-cash"
+          name="Выбор типа оплаты" form="offer-form" checked>
+        <span class="cart__deliverry-type-descr cart__radio-descr">
+          Оплата наличными
+        </span>
+      </label>
+      <input type="radio" name="Выбор типа оплаты" id="pay-type-online" class="modal__radio--hidden pay-type-radio"
+        form="offer-form">
     </div>
+
+    <button type="submit" class="btn btn--transparent btn--l modal__pay-btn modal-pay-offline__btn"
+      form="offer-form">Оформить</button>
   </div>
 
   <div class="modal__wrapper" id="modal-alert">

@@ -218,10 +218,13 @@ $(function () {
     }, 100);
   });
 
+  let alert;
+
   $(".modal__overlay, .modal__close").click(function () {
     $(".modal__wrapper").fadeOut(260);
     $(".modal").fadeOut(260);
     $("body").removeClass("no-scroll");
+    clearInterval(alert);
   });
 
   $(".js-reset").click(function () {
@@ -230,6 +233,14 @@ $(function () {
       $("#modal-login").fadeIn(260);
     }, 300);
   });
+
+
+
+  //NOTE - pay-type-offline/online switch
+  $(".modal-pay-online__btn").click(function () {
+    $(".pay-type-radio").attr("checked", false);
+    $("#pay-type-online").attr("checked", true);
+  })
 
 
 
@@ -243,9 +254,14 @@ $(function () {
     }, 300);
   });
 
+  //NOTE - disabled buttons function
+  // $("input").change(function () {
+
+  // })
 
 
   //NOTE - forms ajax submit
+
   $("#offer-form").submit(function () {
     let order_data = $(this).serialize();
     $.ajax({
@@ -254,23 +270,29 @@ $(function () {
       data: order_data,
       success: function () {
         window.location.replace($(this).data("pay"));
+        $("form").reset();
       },
       error: function () {
-        // alert("Что-то пошло не так.", "Повторите отправку заказа.");
-        let time = 10;
+        let time;
+        time = 5;
+        $(".modal__timer").text(time);
         $("#modal-pay").fadeOut();
-        setTimeout(() => {
-          $("#modal-alert").fadeIn(260);
-        }, 300);
-        // setInterval(function () {
-        //   $(".modal__timer").text(time);
-        //   time--;
-        // }, 1000);
-        setTimeout(() => {
-          $("#modal-alert").fadeOut(260);
-        }, 10000);
+        $("#modal-alert").fadeIn(260);
+        alert = setInterval(function () {
+          $(".modal__timer").text(time);
+          if (time > 0) {
+            time--;
+          } else {
+            $("#modal-alert").fadeOut(260);
+            $(".modal").fadeOut(260);
+            $("#pay-type-online").attr("checked", false);
+            $("#pay-type-cash").attr("checked", true);
+            clearInterval(alert);
+          }
+        }, 1000);
       }
     });
+    return false;
   });
 
 
