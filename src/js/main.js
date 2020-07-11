@@ -343,8 +343,9 @@ $(function () {
     });
 
     $(".cabinet__input--build, .cart__input--build").inputmask({
-      mask: "мкр. " + "99" + " " + "дом/здание " + "999" + " кв/офис " + "999",
+      mask: "мкр. " + "9{1,2}" + " " + "дом/здание " + "9{1,3}" + " кв/офис " + "9{1,3}",
       greedy: false,
+      validator: "[0-9]",
       onincomplete: function () {
         $(this).parent().addClass("invalid");
         setTimeout(() => {
@@ -357,7 +358,8 @@ $(function () {
     });
 
     $(".cabinet__input--set, .cart__input--set").inputmask({
-      mask: "подъезд " + "99",
+      mask: "подъезд " + "9{1,2}",
+      validator: "[0-9]",
       greedy: false,
       onincomplete: function () {
         $(this).parent().addClass("invalid");
@@ -375,6 +377,7 @@ $(function () {
 
     $(".cabinet__input--floor, .cart__input--floor").inputmask({
       mask: "этаж " + "9",
+      validator: "[0-9]",
       greedy: false,
       onincomplete: function () {
         $(this).parent().addClass("invalid");
