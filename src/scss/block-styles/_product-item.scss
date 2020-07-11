@@ -195,7 +195,7 @@
   }
 
   &__count {
-    margin: 0 1rem 3px;
+    margin: auto 0;
     color: white;
     display: block;
     font-size: 1rem;
@@ -293,6 +293,13 @@
       background-color: #000000;
       right: 1.875rem;
       left: auto;
+      transition: all 0.26s;
+      transform-origin: center center;
+    }
+
+    &.--open::before {
+      transform: rotate(90deg) translate(-110%, 0);
+      top: 35%;
     }
 
     &:hover {

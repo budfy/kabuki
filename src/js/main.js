@@ -113,6 +113,7 @@ $(function () {
 
   $(".product-item__ingridients-switcher").click(function () {
     $(this).siblings(".product-item__ingr-list").slideToggle(260);
+    $(this).toggleClass("--open")
   });
 
 
@@ -254,10 +255,6 @@ $(function () {
     }, 300);
   });
 
-  //NOTE - disabled buttons function
-  // $("input").change(function () {
-
-  // })
 
 
   //NOTE - forms ajax submit

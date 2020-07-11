@@ -71,6 +71,7 @@
     display: block;
     height: 100%;
     width: auto;
+    height: 1.875rem;
 
     &:hover .footer__social-icon {
       fill: $main-red;
@@ -91,5 +92,6 @@
     object-fit: contain;
     fill: white;
     transition: all.3s;
+    object-position: center;
   }
 }
