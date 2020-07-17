@@ -284,6 +284,7 @@ $(function () {
             $(".modal").fadeOut(260);
             $("#pay-type-online").attr("checked", false);
             $("#pay-type-cash").attr("checked", true);
+            $("body").removeClass("no-scroll");
             clearInterval(alert);
           }
         }, 1000);
