@@ -221,11 +221,15 @@ $(function () {
 
   let alert;
 
-  $(".modal__overlay, .modal__close").click(function () {
-    $(".modal__wrapper").fadeOut(260);
-    $(".modal").fadeOut(260);
+  function modalClose(closeTime) {
+    $(".modal__wrapper").fadeOut(closeTime);
+    $(".modal").fadeOut(closeTime);
     $("body").removeClass("no-scroll");
     clearInterval(alert);
+  }
+
+  $(".modal__overlay, .modal__close").click(function () {
+    modalClose(260);
   });
 
   $(".js-reset").click(function () {
@@ -245,7 +249,7 @@ $(function () {
 
 
 
-  //NOTE - close/open modals
+  //NOTE - close+open modals
 
   $(".modal__btn[data-modal]").click(function () {
     let modal = $(this).data("modal");
@@ -281,11 +285,9 @@ $(function () {
             time--;
           } else {
             $("#modal-alert").fadeOut(260);
-            $(".modal").fadeOut(260);
             $("#pay-type-online").attr("checked", false);
             $("#pay-type-cash").attr("checked", true);
-            $("body").removeClass("no-scroll");
-            clearInterval(alert);
+            modalClose(260);
           }
         }, 1000);
       }
@@ -429,7 +431,6 @@ $(function () {
         $('#address-item-' + address_id).append('<button type="button" class="cabinet__address-remove remove-btn"></button>');
         maskinit();
         $('#address-item-' + address_id).find('input').val('');
-        console.log("address_id", address_id)
       }
     }
   );
@@ -602,4 +603,81 @@ $(function () {
   $(".form__password-btn").on("mouseup", function () {
     $(this).siblings('input').attr('type', "password");
   });
+
+
+
+  //NOTE: date settings
+  const date = new Date();
+  let today = date.getDay(),
+    hour = date.getHours(),
+    minute = date.getMinutes(),
+    second = date.getSeconds(),
+    openTimer = setInterval(() => {
+          calcTime();
+        }, 1000);
+  $(window).on("load", function () {
+    $(".header__working-days").children().removeClass("--current");
+    $(".header__working-days").children().eq(today - 1).addClass("--current");
+    if (today == 5 || today === 6 && hour < 11 || hour > 22) {
+        callAlert();
+        openTimer();
+      }
+    if (hour < 11 || hour > 21 || hour == 21 && minute > 30) {
+        callAlert();
+        openTimer();
+    }
+  });
+
+  function callAlert() {
+    // if (!sessionStorage.mod) {
+      calcTime()
+      $(".modal").fadeIn(260);
+      $("body").addClass("no-scroll");
+      $("#modal-worktime").siblings(".modal__wrapper").fadeOut();
+      setTimeout(() => {
+        $("#modal-worktime").fadeIn(260);
+      }, 100);
+    // }
+    sessionStorage.setItem("mod", true);
+    return false;
+  }
+  
+  function calcTime() {
+    let
+    now = new Date(),
+    hrsToOpen,
+    minToOpen,
+    secToOpen,
+    result;
+    if (now.getHours() < 10) {
+      hrsToOpen = 10-now.getHours();
+    } else {
+      hrsToOpen = 34-now.getHours();
+    }
+    if (hrsToOpen == 0) {
+      hrsToOpen = 0
+    }
+    minToOpen = 60 - now.getMinutes();
+    if (minToOpen == 60) {
+      minToOpen = 0
+    }
+    if (minToOpen < 10) {
+      minToOpen = "0"+minToOpen
+    }
+    secToOpen = 60 - now.getSeconds();
+    if (secToOpen == 60) {
+      secToOpen = 0
+    }
+    if (secToOpen < 10) {
+      secToOpen = "0"+secToOpen
+    }
+
+    result = String(hrsToOpen+":"+minToOpen+":"+secToOpen);
+    $(".modal__open-time").text(result);
+  }
+
+  $(".modal__ok").click(function () {
+    modalClose(260);
+    clearInterval(openTimer);
+    });
 });

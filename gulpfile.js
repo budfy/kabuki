@@ -18,7 +18,7 @@ let gulp = require("gulp"),
 	webp = require('gulp-webp'),
 	webphtml = require('gulp-webp-html'), //fixme: fix webp
 	webpcss = require("gulp-webpcss"), //todo: fix webp
-	uglify = require("gulp-uglify"), //то же, что cssmin, только для js
+	uglify = require("gulp-uglify-es").default, //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
 	ttf2woff = require("gulp-ttf2woff"), //конвертирует шрифты в веб-формат
@@ -125,7 +125,7 @@ gulp.task("script", function () {
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())
-		.pipe(babel())
+		// .pipe(babel())
 		.pipe(concat("libs.min.js"))
 		.pipe(uglify())
 		.pipe(sourcemaps.write("sourcemaps/"))
@@ -138,7 +138,7 @@ gulp.task("minjs", function () {
 	return gulp
 		.src("src/js/*.js")
 		.pipe(size())
-		.pipe(babel())
+		// .pipe(babel())
 		.pipe(uglify())
 		.pipe(
 			rename({

@@ -209,123 +209,211 @@
   </div>
 </footer>
   </div>
-  <div class="modal" role="dialog" aria-modal="true">
-  <div class="modal__overlay" tabindex="0"></div>
-  <div class="modal__wrapper" id="modal-login">
+  <div class="modal"
+  role="dialog"
+  aria-modal="true">
+  <div class="modal__overlay"
+    tabindex="0"></div>
+  <div class="modal__wrapper"
+    id="modal-login">
     <button class="modal__close">Закрыть</button>
     <p class="modal__title">Личный кабинет</p>
     <form class="modal__form">
-      <label for="modal-login__phone" class="modal__form-label">
-        <input type="tel" class="modal__form-input form-input" id="modal-login__phone" required placeholder="Телефон"
+      <label for="modal-login__phone"
+        class="modal__form-label">
+        <input type="tel"
+          class="modal__form-input form-input"
+          id="modal-login__phone"
+          required
+          placeholder="Телефон"
           name="Телефон">
       </label>
-      <label for="modal-login__pass" class="modal__form-label">
-        <input type="password" class="modal__form-input form-input" id="modal-login__pass" required placeholder="Пароль"
+      <label for="modal-login__pass"
+        class="modal__form-label">
+        <input type="password"
+          class="modal__form-input form-input"
+          id="modal-login__pass"
+          required
+          placeholder="Пароль"
           name="Пароль">
-        <button class="form__password-btn" type="button"></button>
+        <button class="form__password-btn"
+          type="button"></button>
       </label>
       <div class="modal__btn-box flex">
-        <button class="modal__btn btn btn--red  btn--s" type="submit">Войти</button>
-        <button class="modal__btn btn btn--transparent btn--l" data-modal="#modal-registration"
+        <button class="modal__btn btn btn--red  btn--s"
+          type="submit">Войти</button>
+        <button class="modal__btn btn btn--transparent btn--l"
+          data-modal="#modal-registration"
           type="button">Зарегистрироваться</button>
-        <button class="modal__btn modal__pass-reset" type="button" data-modal="#modal-password">Восстановить
+        <button class="modal__btn modal__pass-reset"
+          type="button"
+          data-modal="#modal-password">Восстановить
           пароль</button>
       </div>
     </form>
   </div>
 
-  <div class="modal__wrapper" id="modal-registration">
+  <div class="modal__wrapper"
+    id="modal-registration">
     <button class="modal__close">Закрыть</button>
     <p class="modal__title">Регистрация</p>
     <form class="modal__form flex --col">
-      <label for="modal-reg__name" class="modal__form-label">
-        <input type="text" class="modal__form-input form-input" required placeholder="Имя" name="Имя"
+      <label for="modal-reg__name"
+        class="modal__form-label">
+        <input type="text"
+          class="modal__form-input form-input"
+          required
+          placeholder="Имя"
+          name="Имя"
           id="modal-reg__name">
       </label>
-      <label for="modal-reg__phone" class="modal__form-label">
-        <input type="tel" class="modal__form-input form-input" required placeholder="Телефон" name="Телефон"
+      <label for="modal-reg__phone"
+        class="modal__form-label">
+        <input type="tel"
+          class="modal__form-input form-input"
+          required
+          placeholder="Телефон"
+          name="Телефон"
           id="modal-reg__phone">
       </label>
-      <label for="modal-reg__email" class="modal__form-label">
-        <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail"
-          name="E–mail" id="modal-reg__email">
+      <label for="modal-reg__email"
+        class="modal__form-label">
+        <input type="text"
+          class="modal__form-input form-input form-input--email"
+          required
+          placeholder="E–mail"
+          name="E–mail"
+          id="modal-reg__email">
       </label>
-      <label for="modal-reg__birthday" class="modal__form-label form-label--ph">
-        <input type="date" class="modal__form-input form-input  form-input--ph" required name="Дата-рождения"
+      <label for="modal-reg__birthday"
+        class="modal__form-label form-label--ph">
+        <input type="date"
+          class="modal__form-input form-input  form-input--ph"
+          required
+          name="Дата-рождения"
           id="modal-reg__birthday">
         <span class="form-placeholder">Дата рождения</span>
       </label>
-      <label for="modal-reg__password" class="modal__form-label">
-        <input type="password" class="modal__form-input form-input" required placeholder="Пароль" name="Пароль"
+      <label for="modal-reg__password"
+        class="modal__form-label">
+        <input type="password"
+          class="modal__form-input form-input"
+          required
+          placeholder="Пароль"
+          name="Пароль"
           id="modal-reg__password">
-        <button class="form__password-btn" type="button"></button>
+        <button class="form__password-btn"
+          type="button"></button>
       </label>
-      <label for="modal-reg__pers" class="modal__form-label modal__form-label--check flex">
-        <input class="modal__form-check" type="checkbox" name="Согласие на обработку персональных данных"
-          id="modal-reg__pers" checked>
+      <label for="modal-reg__pers"
+        class="modal__form-label modal__form-label--check flex">
+        <input class="modal__form-check"
+          type="checkbox"
+          name="Согласие на обработку персональных данных"
+          id="modal-reg__pers"
+          checked>
         <span class="modal__check-descr">Согласен на обработку персональных данных</span>
       </label>
       <div class="modal__btn-box flex">
-        <button class="modal__btn btn btn--red btn--l" type="submit">Зарегистрироваться</button>
-        <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
+        <button class="modal__btn btn btn--red btn--l"
+          type="submit">Зарегистрироваться</button>
+        <button class="modal__btn btn btn--transparent btn--s js-reset"
+          type="reset">Отмена</button>
       </div>
     </form>
   </div>
 
-  <div class="modal__wrapper" id="modal-password">
+  <div class="modal__wrapper"
+    id="modal-password">
     <button class="modal__close">Закрыть</button>
     <p class="modal__title">Восстановление пароля</p>
     <form class="modal__form">
-      <label for="modal__reset-email" class="modal__form-label">
-        <input type="text" class="modal__form-input form-input form-input--email" required placeholder="E–mail*"
-          name="e-mail" id="modal__reset-email">
+      <label for="modal__reset-email"
+        class="modal__form-label">
+        <input type="text"
+          class="modal__form-input form-input form-input--email"
+          required
+          placeholder="E–mail*"
+          name="e-mail"
+          id="modal__reset-email">
       </label>
       <p class="modal__form-descr">
         *На Вашу почту придет письмо с инструкцией
       </p>
       <div class="modal__btn-box flex">
-        <button class="modal__btn btn btn--red btn--l" type="submit">Отправить</button>
-        <button class="modal__btn btn btn--transparent btn--s js-reset" type="reset">Отмена</button>
+        <button class="modal__btn btn btn--red btn--l"
+          type="submit">Отправить</button>
+        <button class="modal__btn btn btn--transparent btn--s js-reset"
+          type="reset">Отмена</button>
       </div>
     </form>
   </div>
 
-  <div class="modal__wrapper modal__pay" id="modal-pay">
+  <div class="modal__wrapper modal__pay"
+    id="modal-pay">
     <button class="modal__close">Закрыть</button>
     <p class="modal__title">Оплата</p>
 
-    <button type="submit" class="btn btn--red btn--l modal__pay-btn modal-pay-online__btn"
+    <button type="submit"
+      class="btn btn--red btn--l modal__pay-btn modal-pay-online__btn"
       form="offer-form">Онлайн</button>
 
     <p class="modal__title modal__title--sub">При получении:</p>
 
     <div class="modal__radio-wrapper">
-      <label for="pay-type-card" class="cart__radio modal__radio">
-        <input type="radio" class="cart__radio-input modal__radio pay-type-radio" id="pay-type-card"
-          name="Выбор типа оплаты" form="offer-form">
+      <label for="pay-type-card"
+        class="cart__radio modal__radio">
+        <input type="radio"
+          class="cart__radio-input modal__radio pay-type-radio"
+          id="pay-type-card"
+          name="Выбор типа оплаты"
+          form="offer-form">
         <span class="cart__deliverry-type-descr cart__radio-descr">
           Оплата картой
         </span>
       </label>
-      <label for="pay-type-cash" class="cart__radio modal__radio">
-        <input type="radio" class="cart__radio-input modal__radio pay-type-radio" id="pay-type-cash"
-          name="Выбор типа оплаты" form="offer-form" checked>
+      <label for="pay-type-cash"
+        class="cart__radio modal__radio">
+        <input type="radio"
+          class="cart__radio-input modal__radio pay-type-radio"
+          id="pay-type-cash"
+          name="Выбор типа оплаты"
+          form="offer-form"
+          checked>
         <span class="cart__deliverry-type-descr cart__radio-descr">
           Оплата наличными
         </span>
       </label>
-      <input type="radio" name="Выбор типа оплаты" id="pay-type-online" class="modal__radio--hidden pay-type-radio"
+      <input type="radio"
+        name="Выбор типа оплаты"
+        id="pay-type-online"
+        class="modal__radio--hidden pay-type-radio"
         form="offer-form">
     </div>
 
-    <button type="submit" class="btn btn--transparent btn--l modal__pay-btn modal-pay-offline__btn"
+    <button type="submit"
+      class="btn btn--transparent btn--l modal__pay-btn modal-pay-offline__btn"
       form="offer-form">Оформить</button>
   </div>
 
-  <div class="modal__wrapper" id="modal-alert">
+  <div class="modal__wrapper"
+    id="modal-alert">
     <button class="modal__close">Закрыть</button>
     <p class="modal__title">Что-то пошло не так.</p>
     <p class="modal__title">Повторите отправку заказа через <span class="modal__timer"></span> секунд.</p>
+  </div>
+
+  <div class="modal__wrapper"
+    id="modal-worktime">
+    <button class="modal__close">Закрыть</button>
+    <p class="modal__title">Уважаемый посетитель!</p>
+    <p class="modal__text"><strong>В данный момент наше заведение закрыто.</strong></p>
+       <p class="modal__text">Вы всё равно можете сделать предварительный заказ который мы примем к исполнению, как только ресторан откроется.
+    </p>
+    <p class="modal__text">До открытия осталось
+      <strong><span class="modal__open-time"></span></strong>
+    </p>
+    <button type="button" class="modal__ok btn btn--transparent btn--l">Я понял</button>
   </div>
 </div>
   <script async src="js/webp.min.js"></script>

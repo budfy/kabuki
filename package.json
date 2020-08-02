@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "aos": "^2.3.4",
+    "gulp-uglify-es": "^2.0.0",
     "gulp-webpcss": "^1.1.1",
     "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
