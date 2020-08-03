@@ -618,6 +618,9 @@ $(function () {
   $(window).on("load", function () {
     $(".header__working-days").children().removeClass("--current");
     $(".header__working-days").children().eq(today - 1).addClass("--current");
+    if (today >=5) {
+      $(".header__working-time").text("c 11:00 до 22:00");
+    }
     if (today == 5 || today === 6 && hour < 11 || hour > 22) {
         callAlert();
         openTimer();
@@ -629,7 +632,7 @@ $(function () {
   });
 
   function callAlert() {
-    // if (!sessionStorage.mod) {
+    if (!sessionStorage.mod) {
       calcTime()
       $(".modal").fadeIn(260);
       $("body").addClass("no-scroll");
@@ -637,7 +640,7 @@ $(function () {
       setTimeout(() => {
         $("#modal-worktime").fadeIn(260);
       }, 100);
-    // }
+    }
     sessionStorage.setItem("mod", true);
     return false;
   }
@@ -674,6 +677,11 @@ $(function () {
 
     result = String(hrsToOpen+":"+minToOpen+":"+secToOpen);
     $(".modal__open-time").text(result);
+
+    if (hrsToOpen == 0 && minToOpen == 0 && secToOpen == 0) {
+      modalClose(260);
+      clearInterval(openTimer);
+    }
   }
 
   $(".modal__ok").click(function () {
