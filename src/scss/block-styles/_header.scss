@@ -87,6 +87,15 @@
     object-fit: contain;
   }
 
+  &__address-link{
+    text-decoration: underline;
+    color: inherit;
+    padding-left: 0.25rem;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
   &__work-hours {
     height: 100%;
     padding: 1.4375rem 0;
