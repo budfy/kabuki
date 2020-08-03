@@ -639,56 +639,55 @@ $(function () {
     modalClose(260);
     clearInterval(openTimer);
     });
+    function callAlert() {
+      // if (!sessionStorage.mod) {
+        calcTime()
+        $(".modal").fadeIn(260);
+        $("body").addClass("no-scroll");
+        $("#modal-worktime").siblings(".modal__wrapper").fadeOut();
+        setTimeout(() => {
+          $("#modal-worktime").fadeIn(260);
+        }, 100);
+      // }
+      sessionStorage.setItem("mod", true);
+    }
+    
+    function calcTime() {
+      let
+      now = new Date(),
+      hrsToOpen,
+      minToOpen,
+      secToOpen,
+      result;
+      if (now.getHours() < 10) {
+        hrsToOpen = 10-now.getHours();
+      } else {
+        hrsToOpen = 34-now.getHours();
+      }
+      if (hrsToOpen == 0 || hrsToOpen >= 24) {
+        hrsToOpen = 0
+      }
+      minToOpen = 59 - now.getMinutes();
+      if (minToOpen == 60) {
+        minToOpen = 0
+      }
+      if (minToOpen < 10) {
+        minToOpen = "0"+minToOpen
+      }
+      secToOpen = 59 - now.getSeconds();
+      if (secToOpen == 60) {
+        secToOpen = 0
+      }
+      if (secToOpen < 10) {
+        secToOpen = "0"+secToOpen
+      }
+    
+      result = String(hrsToOpen+":"+minToOpen+":"+secToOpen);
+      $(".modal__open-time").text(result);
+    
+      if (hrsToOpen <= 0 && minToOpen <= 0 && secToOpen <= 1) {
+        modalClose(260);
+        clearInterval(openTimer);
+      }
+    }
 });
-
-function callAlert() {
-  if (!sessionStorage.mod) {
-    calcTime()
-    $(".modal").fadeIn(260);
-    $("body").addClass("no-scroll");
-    $("#modal-worktime").siblings(".modal__wrapper").fadeOut();
-    setTimeout(() => {
-      $("#modal-worktime").fadeIn(260);
-    }, 100);
-  }
-  sessionStorage.setItem("mod", true);
-}
-
-function calcTime() {
-  let
-  now = new Date(),
-  hrsToOpen,
-  minToOpen,
-  secToOpen,
-  result;
-  if (now.getHours() < 10) {
-    hrsToOpen = 10-now.getHours();
-  } else {
-    hrsToOpen = 34-now.getHours();
-  }
-  if (hrsToOpen == 0) {
-    hrsToOpen = 0
-  }
-  minToOpen = 60 - now.getMinutes();
-  if (minToOpen == 60) {
-    minToOpen = 0
-  }
-  if (minToOpen < 10) {
-    minToOpen = "0"+minToOpen
-  }
-  secToOpen = 60 - now.getSeconds();
-  if (secToOpen == 60) {
-    secToOpen = 0
-  }
-  if (secToOpen < 10) {
-    secToOpen = "0"+secToOpen
-  }
-
-  result = String(hrsToOpen+":"+minToOpen+":"+secToOpen);
-  $(".modal__open-time").text(result);
-
-  if (hrsToOpen <= 0 && minToOpen <= 0 && secToOpen <= 0) {
-    modalClose(260);
-    clearInterval(openTimer);
-  }
-}

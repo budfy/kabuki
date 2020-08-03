@@ -348,6 +348,15 @@ gulp.task("browser-sync", function () {
 });
 
 gulp.task(
+	"makeDocs",
+	function () {
+		return gulp
+			.src("build/**/*.*")
+			.pipe(gulp.dest("docs"))
+	}
+)
+
+gulp.task(
 	"default",
 	gulp.parallel(
 		"browser-sync",
@@ -361,5 +370,6 @@ gulp.task(
 		"font-eot",
 		"font-woff2",
 		"images",
+		"makeDocs"
 	),
 ); //запускает все перечисленные задачи разом
