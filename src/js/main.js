@@ -610,82 +610,85 @@ $(function () {
   const date = new Date();
   let today = date.getDay(),
     hour = date.getHours(),
-    minute = date.getMinutes(),
-    second = date.getSeconds(),
-    openTimer = setInterval(() => {
-          calcTime();
-        }, 1000);
+    minute = date.getMinutes();
   $(window).on("load", function () {
     $(".header__working-days").children().removeClass("--current");
     $(".header__working-days").children().eq(today - 1).addClass("--current");
-    if (today >=5) {
+    if (today == 5 || today == 6) {
       $(".header__working-time").text("c 11:00 до 22:00");
     }
-    if (today == 5 || today === 6 && hour < 11 || hour > 22) {
+    if (today == 5 || today == 6) {
+      if (hour < 11 || hour > 21) {
         callAlert();
-        openTimer();
+        openTimer = setInterval(() => {
+          calcTime();
+        }, 1000);
       }
-    if (hour < 11 || hour > 21 || hour == 21 && minute > 30) {
-        callAlert();
-        openTimer();
+    }
+    else{
+      if (hour < 11 || hour > 21 || hour == 21 && minute >= 30) {
+          callAlert();
+          openTimer = setInterval(() => {
+            calcTime();
+          }, 1000);
+      }
     }
   });
-
-  function callAlert() {
-    if (!sessionStorage.mod) {
-      calcTime()
-      $(".modal").fadeIn(260);
-      $("body").addClass("no-scroll");
-      $("#modal-worktime").siblings(".modal__wrapper").fadeOut();
-      setTimeout(() => {
-        $("#modal-worktime").fadeIn(260);
-      }, 100);
-    }
-    sessionStorage.setItem("mod", true);
-    return false;
-  }
-  
-  function calcTime() {
-    let
-    now = new Date(),
-    hrsToOpen,
-    minToOpen,
-    secToOpen,
-    result;
-    if (now.getHours() < 10) {
-      hrsToOpen = 10-now.getHours();
-    } else {
-      hrsToOpen = 34-now.getHours();
-    }
-    if (hrsToOpen == 0) {
-      hrsToOpen = 0
-    }
-    minToOpen = 60 - now.getMinutes();
-    if (minToOpen == 60) {
-      minToOpen = 0
-    }
-    if (minToOpen < 10) {
-      minToOpen = "0"+minToOpen
-    }
-    secToOpen = 60 - now.getSeconds();
-    if (secToOpen == 60) {
-      secToOpen = 0
-    }
-    if (secToOpen < 10) {
-      secToOpen = "0"+secToOpen
-    }
-
-    result = String(hrsToOpen+":"+minToOpen+":"+secToOpen);
-    $(".modal__open-time").text(result);
-
-    if (hrsToOpen == 0 && minToOpen == 0 && secToOpen == 0) {
-      modalClose(260);
-      clearInterval(openTimer);
-    }
-  }
 
   $(".modal__ok").click(function () {
     modalClose(260);
     clearInterval(openTimer);
     });
 });
+
+function callAlert() {
+  if (!sessionStorage.mod) {
+    calcTime()
+    $(".modal").fadeIn(260);
+    $("body").addClass("no-scroll");
+    $("#modal-worktime").siblings(".modal__wrapper").fadeOut();
+    setTimeout(() => {
+      $("#modal-worktime").fadeIn(260);
+    }, 100);
+  }
+  sessionStorage.setItem("mod", true);
+}
+
+function calcTime() {
+  let
+  now = new Date(),
+  hrsToOpen,
+  minToOpen,
+  secToOpen,
+  result;
+  if (now.getHours() < 10) {
+    hrsToOpen = 10-now.getHours();
+  } else {
+    hrsToOpen = 34-now.getHours();
+  }
+  if (hrsToOpen == 0) {
+    hrsToOpen = 0
+  }
+  minToOpen = 60 - now.getMinutes();
+  if (minToOpen == 60) {
+    minToOpen = 0
+  }
+  if (minToOpen < 10) {
+    minToOpen = "0"+minToOpen
+  }
+  secToOpen = 60 - now.getSeconds();
+  if (secToOpen == 60) {
+    secToOpen = 0
+  }
+  if (secToOpen < 10) {
+    secToOpen = "0"+secToOpen
+  }
+
+  result = String(hrsToOpen+":"+minToOpen+":"+secToOpen);
+  $(".modal__open-time").text(result);
+
+  if (hrsToOpen <= 0 && minToOpen <= 0 && secToOpen <= 0) {
+    modalClose(260);
+    clearInterval(openTimer);
+  }
+}

@@ -125,7 +125,7 @@ gulp.task("script", function () {
 		])
 		.pipe(sourcemaps.init())
 		.pipe(size())
-		// .pipe(babel())
+		.pipe(babel())
 		.pipe(concat("libs.min.js"))
 		.pipe(uglify())
 		.pipe(sourcemaps.write("sourcemaps/"))
@@ -138,7 +138,7 @@ gulp.task("minjs", function () {
 	return gulp
 		.src("src/js/*.js")
 		.pipe(size())
-		// .pipe(babel())
+		.pipe(babel())
 		.pipe(uglify())
 		.pipe(
 			rename({
